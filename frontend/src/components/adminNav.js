@@ -1,7 +1,21 @@
 import React, { Component } from "react";
+import Swal from 'sweetalert2';
 
 class Navbar extends Component { 
 render() {
+    function logout(){
+        
+          	Swal.fire({  
+                title: "Success!",
+                text: "Logout Success",
+                icon: 'success',
+                confirmButtonText: "OK",
+                type: "success"}).then(okay => {
+                    if (okay) {
+                        window.location.href = "/Admin.Login";
+                    }
+            });
+    }
 return (
   <div>
       <div class="dashboard-header">
@@ -53,7 +67,7 @@ return (
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="#" onClick={logout}><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>

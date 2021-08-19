@@ -119,14 +119,14 @@ function PasswordReset() {
                     
                     <div class="mt-3 mb-2">
                          <div class="d-grid gap-2">
-                                <MDBBtn onClick={resetPassword} class="btn text-white bg-dark d-letter-spacing fw-light" disabled={ResetBtn}>Password Reset</MDBBtn> 
+                                <MDBBtn onClick={resetPassword} class="btn btn-sm text-white bg-dark d-letter-spacing fw-light" disabled={ResetBtn}>Password Reset</MDBBtn> 
                          </div>
                     </div>
                     <center>
                      <MDBRow >
                         <MDBCol size='5'></MDBCol>
                         <MDBCol size='2'></MDBCol>
-                        <MDBCol size='5'><a href="/" class="text-muted"><small>Login</small></a></MDBCol>
+                        <MDBCol size='5'><a href="/Admin.Login" class="text-muted"><small>Login</small></a></MDBCol>
                      </MDBRow>
                     </center>
                 </form>

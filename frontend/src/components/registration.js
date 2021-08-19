@@ -92,20 +92,20 @@ function Register() {
                 </center>
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">User Name</label>
+                        <small for="exampleInputPassword1">User Name</small>
                         <input type="text" class="form-control" 
                          onChange={(e) =>{
                             setUserName(e.target.value);
                         }}/>
                     </div>
                    <div class="form-group mt-3">
-                        <label for="exampleInputPassword1">Password</label>
+                        <small for="exampleInputPassword1">Password</small>
                         <input class="form-control" type={passwordShown ? "text" : "password"} id="pass" onChange={(e) =>{
                             setForgotLoginPassword(e.target.value);
                         }}/>
                     </div>
                      <div class="form-group mt-3">
-                        <label for="exampleInputPassword1 ">Confirm Password</label>
+                        <small for="exampleInputPassword1 ">Confirm Password</small>
                         <input class="form-control" type={passwordShown ? "text" : "password"} id="pass"  onChange={(e) =>{
                                             setCFPasswordFnction(e.target.value);
                                           }} />
@@ -118,14 +118,14 @@ function Register() {
                     
                     <div class="mt-3 mb-2">
                          <div class="d-grid gap-2">
-                                <MDBBtn onClick={resetPassword} class="btn text-white bg-dark d-letter-spacing fw-light" disabled={ResetBtn}>Registration</MDBBtn> 
+                                <MDBBtn onClick={resetPassword} class="btn text-white btn-sm bg-dark d-letter-spacing fw-light" disabled={ResetBtn}>Registration</MDBBtn> 
                          </div>
                     </div>
                     <center>
                      <MDBRow >
                         <MDBCol size='5'></MDBCol>
                         <MDBCol size='2'></MDBCol>
-                        <MDBCol size='5'><a href="/" class="text-muted"><small>Login</small></a></MDBCol>
+                        <MDBCol size='5'><a href="/Admin.Login" class="text-muted"><small>Login</small></a></MDBCol>
                      </MDBRow>
                     </center>
                 </form>

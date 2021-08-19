@@ -1,5 +1,5 @@
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import Index from './components/index'
+import AdminLogin from './components/Admin.Login'
 import PasswordReset from './components/passwordReset'
 import Admin from './components/admin'
 import Registration from './components/registration'
@@ -9,8 +9,8 @@ function App() {
   return (
     <Router>
          <div>
-                <Route exact path="/" >
-                    <Index/>
+                <Route exact path="/Admin.Login" >
+                    <AdminLogin/>
                 </Route>
                 <Route path="/PasswordReset" exact component={PasswordReset}/>
                 <Route path="/Admin" exact component={Admin}/>

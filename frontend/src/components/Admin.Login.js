@@ -88,7 +88,7 @@ function Index() {
                     </div>
                     <div class="mt-3 mb-2">
                          <div class="d-grid gap-2">
-                                <MDBBtn disabled={loginBtn} onClick={login} class="btn text-white bg-dark d-letter-spacing fw-light">Login</MDBBtn>
+                                <MDBBtn disabled={loginBtn} onClick={login} class="btn btn-sm text-white bg-dark d-letter-spacing fw-light">Login</MDBBtn>
                          </div>
                     </div>
                     <center>
