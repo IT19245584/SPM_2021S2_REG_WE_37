@@ -3,12 +3,14 @@ import AdminLogin from './components/Admin.Login'
 import PasswordReset from './components/passwordReset'
 import Admin from './components/admin'
 import Registration from './components/registration'
+import Index from './components/index'
 import { BrowserRouter as Router,Route} from 'react-router-dom'
 
 function App() {
   return (
     <Router>
          <div>
+                <Route path="/" exact component={Index}/>
                 <Route exact path="/Admin.Login" >
                     <AdminLogin/>
                 </Route>

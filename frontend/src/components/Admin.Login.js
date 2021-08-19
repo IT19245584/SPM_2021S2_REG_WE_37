@@ -74,13 +74,13 @@ function Index() {
                 </center>
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">User Name</label>
+                        <small>User Name</small>
                         <input type="text" class="form-control"  onChange={(e) =>{
                             setUser(e.target.value);
                         }}/>
                     </div>
                    <div class="form-group mt-3">
-                        <label for="exampleInputPassword1">Password</label>
+                        <small>Password</small>
                         <input class="form-control" type={passwordShown ? "text" : "password"} id="pass" onChange={(e) =>{
                             set_Password(e.target.value);
                         }}/>
