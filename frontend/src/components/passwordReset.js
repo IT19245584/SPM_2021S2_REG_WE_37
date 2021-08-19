@@ -56,7 +56,9 @@ function PasswordReset() {
 
   function resetPassword(e){
        e.preventDefault();
-       const resetPassword ={ ForgotLoginCPassword}
+       const password = ForgotLoginCPassword;
+       const resetPassword ={password}
+
         axios.put(global.APIUrl+"/user/resetPassword/"+UserName,resetPassword).then(() =>{
 
         Swal.fire({  
@@ -87,7 +89,7 @@ function PasswordReset() {
             <div class="div-center  shadow-4">
                 <div class="content">
                 <center>
-                <img src="img/user.gif" width="75%"/>
+                <img src="img/user.gif" width="65%"/>
                 </center>
                 <form>
                     <div class="form-group">

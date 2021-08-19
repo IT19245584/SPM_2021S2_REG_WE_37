@@ -40,9 +40,9 @@ function Index() {
       });
       result = await result.json();
       //localStorage.setItem("user-info",JSON.stringify(result));
-      //console.log(JSON.stringify(result.success));
+      console.log(JSON.stringify(result.message));
    
-      if( JSON.stringify(result.success) === 'true'){
+      if( JSON.stringify(result.message) === 'true'){
           Cookies.set('user_name',userName, { expires: 70000, path: '' });
 
           	Swal.fire({  
@@ -70,7 +70,7 @@ function Index() {
             <div class="div-center shadow-4">
                 <div class="content">
                 <center>
-                <img src="img/user.gif" width="75%"/>
+                <img src="img/user.gif" width="65%"/>
                 </center>
                 <form>
                     <div class="form-group">
@@ -93,9 +93,12 @@ function Index() {
                     </div>
                     <center>
                      <MDBRow >
-                        <MDBCol size='5'></MDBCol>
-                        <MDBCol size='2'></MDBCol>
-                        <MDBCol size='5'><a href="PasswordReset" class="text-muted"><small>Password Reset</small></a></MDBCol>
+                        <MDBCol size='6'> <a href="PasswordReset" class="text-muted"><small>Password Reset</small></a></MDBCol>
+                        <MDBCol size='1'></MDBCol>
+                        <MDBCol size='1'></MDBCol>
+                        <MDBCol size='4'>
+                            <a href="Registration" class="text-muted"><small>Registration</small></a>
+                        </MDBCol>
                      </MDBRow>
                     </center>
                 </form>

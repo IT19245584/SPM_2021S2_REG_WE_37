@@ -1,1 +1,1 @@
-global.APIUrl = 'http://localhost:8070';
+global.APIUrl = 'http://localhost:5000';

@@ -21,8 +21,8 @@ connection.once('open',()=>{
     console.log("MongoDB connection successfully");
 });
 
-// const systemReg = require('./routes/systemReg');
-// app.use('/systemReg', systemReg);
+const user = require('./routes/user.js');
+app.use('/user', user);
 
 
 app.listen(port,() =>{
