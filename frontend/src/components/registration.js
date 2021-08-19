@@ -105,7 +105,7 @@ function Register() {
                         }}/>
                     </div>
                      <div class="form-group mt-3">
-                        <small for="exampleInputPassword1 ">Confirm Password</small>
+                        <small>Confirm Password</small>
                         <input class="form-control" type={passwordShown ? "text" : "password"} id="pass"  onChange={(e) =>{
                                             setCFPasswordFnction(e.target.value);
                                           }} />

@@ -20,7 +20,7 @@ return (
   <div>
       <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bgTopNav fixed-top">
-                <a class="navbar-brand h1 fw-bold" style={{fontSize:'25px'}} href="index.html"><span className="text-black">E</span><span className="text-danger">-Learning</span></a>
+                <a class="navbar-brand h1 fw-bold" style={{fontSize:'25px'}} href="Admin"><span className="text-black">E</span><span className="text-danger">-Learning</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

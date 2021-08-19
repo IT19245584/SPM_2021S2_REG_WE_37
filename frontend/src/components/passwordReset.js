@@ -93,28 +93,28 @@ function PasswordReset() {
                 </center>
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">User Name</label>
+                        <small>User Name</small>
                         <input type="text" class="form-control" 
                          onChange={(e) =>{
                             setUserName(e.target.value);
                         }}/>
                     </div>
                    <div class="form-group mt-3">
-                        <label for="exampleInputPassword1">Password</label>
+                        <small>Password</small>
                         <input class="form-control" type={passwordShown ? "text" : "password"} id="pass" onChange={(e) =>{
                             setForgotLoginPassword(e.target.value);
                         }}/>
                     </div>
                      <div class="form-group mt-3">
-                        <label for="exampleInputPassword1">Confirm Password</label>
-                        <input class="form-control" type={passwordShown ? "text" : "password"} id="pass"  onChange={(e) =>{
+                        <small>Confirm Password</small>
+                        <input class="form-control" style={{lineHeight:'0%'}} type={passwordShown ? "text" : "password"} id="pass"  onChange={(e) =>{
                                             setCFPasswordFnction(e.target.value);
                                           }} />
+                        <input type="checkbox" onClick={showPassword}/><small style={{fontSize:'10px'}} className="text-muted">&nbsp;Show Password</small><br/>
                         <span style={{fontSize:'12px', margin:'0px', padding:'0px'}}  className={`messageCfpassword ${isValidCFpassword ? 'success' : 'error'}`} >
                             {messageCfpassword}
                         </span>
                         <br/>
-                        <input type="checkbox" onClick={showPassword}/><small style={{fontSize:'10px'}} className="text-muted">&nbsp;Show Password</small>
                     </div>
                     
                     <div class="mt-3 mb-2">
