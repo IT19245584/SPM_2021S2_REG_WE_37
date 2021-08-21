@@ -39,13 +39,13 @@ router.route("/update/:id").put(async (req, res) => {
     const { c_name, c_image, c_description
     } = req.body;
 
-    const updateWorkShop = {
+    const updateCourse = {
         c_name,
         c_image,
         c_description
     }
 
-    const update = await Course.findByIdAndUpdate(CourseID, updateWorkShop)
+    const update = await Course.findByIdAndUpdate(CourseID, updateCourse)
     .then(() => {
     res.status(200).send({status: "Course Updated"})
     }).catch((err) => {
@@ -69,7 +69,7 @@ router.route("/delete/:id").delete(async (req, res) => {
 //view one Course,s information
 router.route("/get/:id").get(async (req, res) => {
     let CourseID = req.params.id;
-    const wshop = await Course.findById(CourseID)
+    const crse = await Course.findById(CourseID)
     .then((Course) => {
         res.status(200).send({status: "Course fetched", Course})
     }).catch(() => {
