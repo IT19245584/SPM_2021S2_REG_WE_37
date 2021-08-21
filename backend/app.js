@@ -30,6 +30,13 @@ app.use("/course", courses);
 const lessons = require("./routes/Lesson.js");
 app.use("/lesson", lessons);
 
+const ExamRegistration = require("./routes/ExamRegistration")
+app.use("/ExamRegistration", ExamRegistration)
+
+const Payment = require("./routes/Payment")
+app.use("/Payment", Payment)
+
+
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
 });
