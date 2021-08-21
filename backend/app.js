@@ -27,6 +27,9 @@ app.use('/user', user);
 const courses = require("./routes/Course.js");
 app.use("/course", courses);
 
+const lessons = require("./routes/Lesson.js");
+app.use("/lesson", lessons);
+
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
 });
