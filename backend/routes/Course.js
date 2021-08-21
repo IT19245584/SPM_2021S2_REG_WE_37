@@ -2,18 +2,16 @@ const router = require('express').Router();
 let Course = require('../models/Course');
 
 //add new course
-// const date = new Date().toISOString().slice(0,10);
 router.route('/add').post((req,res) => {
     const c_name = req.body.c_name;
     const c_image = req.body.c_image;
     const c_description = req.body.c_description;
-    //const state ="Pending";
 
     const newCourse = new Course({
         c_name,
         c_image,
         c_description
-        // state
+  
     })
 
     newCourse.save().then(() =>{
@@ -23,7 +21,6 @@ router.route('/add').post((req,res) => {
     })
 })
 
-//Course->url
 //view all via table view
 router.route("/view-all").get((req, res) => {
     Course.find().then((Course) => {
@@ -33,7 +30,7 @@ router.route("/view-all").get((req, res) => {
     })
 })
 
-//update
+//update course
 router.route("/update/:id").put(async (req, res) => {
     let CourseID = req.params.id;
     const { c_name, c_image, c_description
@@ -54,7 +51,7 @@ router.route("/update/:id").put(async (req, res) => {
     })
 })
 
-//delete
+//delete course
 router.route("/delete/:id").delete(async (req, res) => {
     let CourseID = req.params.id;
     await Course.findByIdAndDelete(CourseID)
@@ -66,7 +63,7 @@ router.route("/delete/:id").delete(async (req, res) => {
         })
 })
 
-//view one Course,s information
+//view one Course's information
 router.route("/get/:id").get(async (req, res) => {
     let CourseID = req.params.id;
     const crse = await Course.findById(CourseID)
