@@ -10,7 +10,7 @@ import { BrowserRouter as Router,Route} from 'react-router-dom'
 import Add_Course from './components/Course/course_add';
 import Course_Dashboard from './components/Course/course_dashboard';
 // import Update_Course from './components/Course/course_update';
-// import View_Table_Course from './components/Course/course_view_table';
+import View_Table_Course from './components/Course/course_view_table';
 // import View_Course from './components/Course/course_view';
 
 //import lessons 
@@ -38,11 +38,11 @@ function App() {
                 <Route path="/course" exact component={Add_Course}/>
                 <Route path="/course-dashboard" exact component={Course_Dashboard}/>
                 {/* <Route path="/update" exact component={Update_Course}/> */}
-                {/* <Route path="/view-table" exact component={View_Table_Course}/> */}
+                <Route path="/view-table" exact component={View_Table_Course}/>
                 {/* <Route path="/view" exact component={View_Course}/> */}
 
                 {/* lessons */}
-                {/* <Route path="/lesson" exact component={Add_Lesson}/> */}
+                <Route path="/lesson" exact component={Add_Lesson}/>
                 {/* <Route path="/update" exact component={Update_Lesson}/> */}
                 {/* <Route path="/view-table" exact component={View_Table_Lesson}/> */}
                 {/* <Route path="/view" exact component={View_Lesson}/> */}
