@@ -29,6 +29,14 @@ import EditAssessment from './components/Lecturer/EditAssessment';
 import LecturerRequest from './components/User/LecturerRequest';
 import AdminNotifications from './components/AdminNotification';
 
+import StudentRegister from './components/Student/StudentRegister';
+import StudentLogin from './components/Student/StudentLogin';
+import StudentViewCourses from './components/Student/ViewCourses';
+import CourseAssessmentView from './components/Student/CourseAssessment';
+import AddAssessmentSubmission from './components/Student/AddAssessmentSubmission';
+import ViewAssessmentSubmission from './components/Student/ViewAssessmentSubmission';
+import EditAssessmentSubmission from './components/Student/EditAssessmentSubmission';
+
 function App() {
   return (
     <Router>
@@ -63,6 +71,14 @@ function App() {
 
                 <Route exact path="/user/request" component={LecturerRequest}/>
                 <Route exact path="/admin/notification" component={AdminNotifications}/>
+
+                <Route exact path="/student/register" component={StudentRegister}/>
+                <Route exact path="/student/course" component={StudentViewCourses}/>
+                <Route exact path="/student/courses/:id" component={CourseAssessmentView}/>
+                <Route exact path="/student/assessments/:id" component={AddAssessmentSubmission}/>
+                <Route exact path="/submissions/assessment/:id" component={ViewAssessmentSubmission}/>
+                <Route exact path="/submissions/:id/edit" component={EditAssessmentSubmission}/>
+                <Route exact path="/student/login" component={StudentLogin}/>
 
         </div>
     </Router>

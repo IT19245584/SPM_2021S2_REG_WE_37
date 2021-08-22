@@ -39,6 +39,8 @@ app.use("/Payment", Payment)
 
 app.use('/assessments',require('./routes/assesmentRoute'));
 app.use('/cv',require('./routes/cvSubmissionRoute'));
+app.use('/submissions',require('./routes/submissionRoute'));
+app.use('/students',require('./routes/studentRoute'));
 
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);

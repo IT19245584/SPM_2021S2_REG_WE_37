@@ -9,7 +9,7 @@ const ref = React.createRef();
 const options = {
     orientation: 'landscape',
     unit: 'in',
-    format: [9.3,8]
+    format: [9.5,8]
 };
 
 class ViewSubmissions extends Component {
