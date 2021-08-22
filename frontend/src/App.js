@@ -5,6 +5,7 @@ import Admin from './components/admin'
 import Registration from './components/registration'
 import Index from './components/index'
 import { BrowserRouter as Router,Route} from 'react-router-dom'
+import './asserts/css/style.css'
 
 //import course
 import Add_Course from './components/Course/course_add';
@@ -19,6 +20,14 @@ import Add_Lesson from './components/Lesson/lesson_add';
 // import Update_Lesson from './components/Lesson/lesson_update';
 // import View_Table_Lesson from './components/Lesson/lesson_view_table';
 // import View_Lesson from './components/Lesson/lesson_view';
+
+import CourseView from './components/Lecturer/ViewCourses';
+import ViewCourseAssessments from './components/Lecturer/ViewCourseAssesment';
+import ViewAssessment from './components/Lecturer/ViewAssessment';
+import EditAssessment from './components/Lecturer/EditAssessment';
+
+import LecturerRequest from './components/User/LecturerRequest';
+import AdminNotifications from './components/AdminNotification';
 
 function App() {
   return (
@@ -46,6 +55,15 @@ function App() {
                 {/* <Route path="/update" exact component={Update_Lesson}/> */}
                 {/* <Route path="/view-table" exact component={View_Table_Lesson}/> */}
                 {/* <Route path="/view" exact component={View_Lesson}/> */}
+
+                <Route path="/lecturer/course" exact component={CourseView}/>
+                <Route path="/lecturer/courses/:id" component={ViewCourseAssessments}/>
+                <Route exact path="/lecturer/assessments/:id" component={ViewAssessment}/>
+                <Route exact path="/lecturer/assessments/:id/edit" component={EditAssessment}/>
+
+                <Route exact path="/user/request" component={LecturerRequest}/>
+                <Route exact path="/admin/notification" component={AdminNotifications}/>
+
         </div>
     </Router>
   );
