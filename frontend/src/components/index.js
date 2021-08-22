@@ -139,7 +139,7 @@ function Home() {
 
             
 
-            <header class="bg-dark py-4">
+            <header class="bg-dark py-5">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
@@ -163,7 +163,7 @@ function Home() {
                 </div>
             </header>
             <section className="container mt-5 pt-5 pb-5 mb-5">
-              <h3 className="text-uppercase">OUR University Partners</h3>
+              <h2 className="text-uppercase text-center" style={{color: '#19011C'}}>OUR University Partners</h2>
               <div className="container">
               <MDBRow className="mt-4">
                 <MDBCol sm='2'>
@@ -204,6 +204,90 @@ function Home() {
                 </div>
               </div>
             </section>
+            <br/>
+            <section className="container text-center mt-5 pt-5 pb-5 mb-5">
+              <h2 className="text-uppercase "  style={{color: '#19011C'}}>DO YOU WANT BECOME</h2>
+               <MDBRow>
+                <MDBCol sm='1'></MDBCol>
+                <MDBCol sm='6'>
+                    <MDBCard className="border-0 shadow-0">
+                    <MDBCardBody className="pt-5 mt-3 text-right">
+                        <MDBCardTitle className="h4">BECOME STUDENT</MDBCardTitle>
+                        <MDBCardText  style={{color:'black', textAlign:'justify'}}>
+                       Are you a student looking to start or complete an course? Affordable course programs provide you with the knowledge you need to succeed with top companies after learning.Join more than 18,000 students from over 100 countries and make yourself at home, right here at Memorial Are you ready to join the Education Revolution?
+                        </MDBCardText>
+                         <MDBBtn  className='mx-2' color='danger'>
+                            Become
+                         </MDBBtn>
+                    </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+                <MDBCol sm='5'>
+                    <MDBCard className="border-0 shadow-0">
+                        <MDBCardImage style={{width:'79%'}} position='top' alt='...' src='./img/student.png' />
+                    </MDBCard>
+                </MDBCol>
+                </MDBRow>
+                <br/>
+                <MDBRow className="mt-5">
+                <MDBCol sm='1'></MDBCol>
+                 <MDBCol sm='6'>
+                    <MDBCard className="border-0 shadow-0">
+                        <MDBCardImage style={{width:'79%'}} position='top' alt='...' src='https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg' />
+                    </MDBCard>
+                </MDBCol>
+                <MDBCol sm='5'>
+                    <MDBCard className="border-0 shadow-0">
+                    <MDBCardBody className="pt-5 mt-3 text-left">
+                        <MDBCardTitle className="h4 text-uppercase">Become an instructor</MDBCardTitle>
+                        <MDBCardText  style={{color:'black', textAlign:'justify'}}>
+                            Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.                        </MDBCardText>
+                         <MDBBtn outline className='mx-2' color='danger'>
+                            Become
+                         </MDBBtn>
+                    </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+                </MDBRow>
+            </section>
+            <section style={{borderTop: '1px solid #E7D8EA'}} className="mb-5 trust"> 
+                <div className="container pt-5 pb-5" >
+                        <center>    <h2 className="text-uppercase "  style={{color: '#19011C'}}>Trusted by companies of all sizes</h2></center>
+                        <MDBRow className="mt-5">
+                            <MDBCol sm='2'>
+                                <MDBCard className="border-0 shadow-0">
+                                <img  src='./img/company/toyota.png' style={{filter: 'grayscale(1)'}} alt='...' />
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol sm='2'>
+                                <MDBCard className="border-0 shadow-0">
+                                <img  src='./img/company/apple.png' style={{filter: 'grayscale(1)'}}  alt='...' />
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol sm='2'>
+                                <MDBCard className="border-0 shadow-0">
+                                <img  src='./img/company/Google.png' style={{filter: 'grayscale(1)'}}  alt='...' />
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol sm='2'>
+                                <MDBCard className="border-0 shadow-0">
+                                <img  src='./img/company/Yahoo-Logo.png' style={{filter: 'grayscale(1)'}}  alt='...' />
+                                </MDBCard>
+                            </MDBCol>
+                               <MDBCol sm='2'>
+                                <MDBCard className="border-0 shadow-0">
+                                <img  src='./img/company/microsoft.jpg' style={{filter: 'grayscale(1)'}}  alt='...' />
+                                </MDBCard>
+                            </MDBCol>
+                               <MDBCol sm='2'>
+                                <MDBCard className="border-0 shadow-0">
+                                <img  src='./img/company/nokia.png' style={{filter: 'grayscale(1)'}}  alt='...' />
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                </div>
+            </section>
+            <br/><br/>
             <footer class="text-center text-lg-start bg-dark text-muted">
             <section
                 class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
