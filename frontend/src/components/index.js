@@ -26,6 +26,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import Cookies from 'js-cookie';
 import {reactLocalStorage} from 'reactjs-localstorage';
+import Navbar from './main_parts/navbar.js';
+import Footer from './main_parts/footer.js';
 
 function Home() {
     const [showBasic, setShowBasic] = useState(false);
@@ -37,108 +39,8 @@ function Home() {
                 <small style={{fontSize:'12px'}} className="text-muted text-capitalize">Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</small>
             </center>
         </div>
-        <MDBNavbar expand='lg' className="sticky-top" light bgColor='dark'>
-            <MDBContainer fluid>
-                <MDBNavbarBrand href='#' style={{fontSize:'25px'}} className="pt-2 navbar-brand h1 fw-bold">
-                    <MDBIcon fas icon="book-open" className="text-danger"/> <span className="text-danger">&nbsp;E</span><span className="text-white">-Learning</span>
-                </MDBNavbarBrand>
-
-                <MDBNavbarToggler
-                aria-controls='navbarSupportedContent'
-                aria-expanded='false'
-                aria-label='Toggle navigation'
-                onClick={() => setShowBasic(!showBasic)}
-                >
-                <MDBIcon icon='bars' fas />
-                </MDBNavbarToggler>
-
-                <MDBCollapse navbar show={showBasic}>
-                <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-                    <MDBNavbarItem>
-                    <MDBNavbarLink style={{color: '#DCDCDC'}} active aria-current='page' href='#'>
-                        About
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
-                    
-                    <MDBNavbarItem>
-                    <MDBDropdown>
-                        <MDBDropdownToggle tag='a' style={{color: '#DCDCDC', cursor: 'pointer'}}  className='nav-link'>
-                        Categories
-                        </MDBDropdownToggle>
-                        <MDBDropdownMenu>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Development</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Bussiness</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Finance & Accounting</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Design</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Music</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>IT & Software</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Marketing</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>Languages</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        <MDBDropdownItem>
-                            <MDBDropdownLink>School Education</MDBDropdownLink>
-                        </MDBDropdownItem>
-                        </MDBDropdownMenu>
-                    </MDBDropdown>
-                    </MDBNavbarItem>
-
-                    <MDBNavbarItem>
-                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
-                        Discuss
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
-                     <MDBNavbarItem>
-                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
-                        Discuss
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
-                    <MDBNavbarItem>
-                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
-                        Blog
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
-                </MDBNavbarNav>
-
-               <MDBCollapse navbar show={showNavRight}>
-                <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
-                  
-                    <MDBNavbarItem>
-                    <MDBNavbarLink href='#'>
-                        <MDBBtn size="lg" outline className='mx-2 text-white' style={{fontSize:'12px',letterSpacing:'2px'}} color='danger'>
-                            Student
-                        </MDBBtn>
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
-                    <MDBNavbarItem>
-                    <MDBNavbarLink  href='#'  >
-                        <MDBBtn size="lg" className='mx-2' color='danger'  style={{fontSize:'12px',letterSpacing:'2px'}} >
-                            Teacher
-                        </MDBBtn>
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
-                </MDBNavbarNav>
-                </MDBCollapse>
-                </MDBCollapse>
-            </MDBContainer>
-            </MDBNavbar>
-
+        <Navbar/>
             
-
             <header class="bg-dark py-5">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
@@ -250,7 +152,60 @@ function Home() {
                 </MDBCol>
                 </MDBRow>
             </section>
-            <section style={{borderTop: '1px solid #E7D8EA'}} className="mb-5 trust"> 
+            <br/>
+            <section className="pb-5 pt-5 trust" style={{borderTop: '1px solid #E7D8EA', borderBottom: '1px solid #E7D8EA'}}>
+                <div className="container">
+                    <center><h2 className="text-uppercase mt-3"  style={{color: '#19011C'}}>OUR SUCCESS</h2></center>
+                    <MDBRow className="mt-5 pt-1">
+                            <MDBCol sm='3'>
+                                <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                       <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>1000<br/>
+                                     <span  className="h6 text-uppercase text-muted">Courses</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                             <MDBCol sm='3'>
+                                  <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                      <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>100+<br/>
+                                     <span  className="h6 text-uppercase text-muted">Instructors</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                             <MDBCol sm='3'>
+                                  <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                       <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>10M<br/>
+                                     <span  className="h6 text-uppercase text-muted">Learners</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                             <MDBCol sm='3'>
+                                  <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                      <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>40000<br/>
+                                     <span  className="h6 text-uppercase text-muted">Minutes of videos</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                    </MDBRow>
+                     <MDBRow className="mt-4 mb-5 pb-3">
+                             <MDBCol sm='4'>
+                                  <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                      <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>480M<br/>
+                                     <span  className="h6 text-uppercase text-muted">Course enrollments</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                             <MDBCol sm='4'>
+                                  <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                       <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>9<br/>
+                                     <span  className="h6 text-uppercase text-muted">Languages</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol sm='4'>
+                                  <MDBCard className="text-center border-0 bg-transparent shadow-0">
+                                       <h5  style={{color:'#3A3A3A',fontSize:'51px',lineHeight:'30px'}}>30000<br/>
+                                     <span  className="h6 text-uppercase text-muted">Total Watching</span></h5>
+                                </MDBCard>
+                            </MDBCol>
+                            
+                    </MDBRow>
+                </div>
+            </section>
+            <section  className="mb-5 pt-5"> 
                 <div className="container pt-5 pb-5" >
                         <center>    <h2 className="text-uppercase "  style={{color: '#19011C'}}>Trusted by companies of all sizes</h2></center>
                         <MDBRow className="mt-5">
@@ -261,7 +216,7 @@ function Home() {
                             </MDBCol>
                             <MDBCol sm='2'>
                                 <MDBCard className="border-0 shadow-0">
-                                <img  src='./img/company/apple.png' style={{filter: 'grayscale(1)'}}  alt='...' />
+                                <img  src='./img/company/images.png' style={{filter: 'grayscale(1)'}}  alt='...' />
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol sm='2'>
@@ -288,112 +243,7 @@ function Home() {
                 </div>
             </section>
             <br/><br/>
-            <footer class="text-center text-lg-start bg-dark text-muted">
-            <section
-                class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-            >
-                <div class="me-5 d-none d-lg-block">
-                <span class="text-warning">Get connected with us on social networks:</span>
-                </div>
-
-                <div>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"></i>
-                </a>
-                </div>
-            </section>
-
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                <div class="row mt-3">
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <h4 class="text-uppercase fw-bold mb-4" style={{letterSpacing:'3px'}}>
-                         <MDBIcon fas icon="book-open" className="text-danger"/> <span className="text-danger">&nbsp;E</span><span className="text-white">-Learning</span>
-                    </h4>
-                    <p>
-                        Every individual has the potential to create change, whether in their life, their community, or the world. The transformative power of education is what unlocks that potential.
-                    </p>
-                    </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                    <h6 class="text-uppercase fw-normal text-F1F1F1 mb-4">
-                        Userful Links
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Affilliate</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Sitemap</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Privacy Policy</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Careers</a>
-                    </p>
-                    </div>
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                   <h6 class="text-uppercase fw-normal text-F1F1F1 mb-4">
-                       &nbsp;
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Blogs</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Contact Us</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Help Center</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Terms</a>
-                    </p>
-                    </div>
-
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                    <h6 class="text-uppercase fw-normal text-F1F1F1 mb-4">
-                        Contact
-                    </h6>
-                    <p><i class="fas fa-home me-3"></i> 89, Galle Road, Kandy</p>
-                    <p>
-                        <i class="fas fa-envelope me-3"></i>
-                         elearning@gmail.com
-                    </p>
-                    <p><i class="fas fa-phone me-3"></i> + 94 10 88 7822</p>
-                    <p><i class="fas fa-print me-3"></i> + 94 11 78 2390</p>
-                    </div>
-
-                </div>
-
-                </div>
-            </section>
-
-
-
-            <div class="text-center p-4" style={{backgroundColor: 'rgba(0, 0, 0, 0.05)'}}>
-                © 2021 Copyright:
-                <a class="text-reset fw-bold" href="https://elearning.com">elearning.com</a>
-            </div>
-
-            </footer>
-
+            <Footer/>
     </div>
     )
 };
