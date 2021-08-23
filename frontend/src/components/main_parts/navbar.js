@@ -34,7 +34,7 @@ function NavBar() {
             <div>
                  <MDBNavbar expand='lg' className="sticky-top" light bgColor='dark'>
             <MDBContainer fluid>
-                <MDBNavbarBrand href='#' style={{fontSize:'25px'}} className="pt-2 navbar-brand h1 fw-bold">
+                <MDBNavbarBrand href='/' style={{fontSize:'25px'}} className="pt-2 navbar-brand h1 fw-bold">
                     <MDBIcon fas icon="book-open" className="text-danger"/> <span className="text-danger">&nbsp;E</span><span className="text-white">-Learning</span>
                 </MDBNavbarBrand>
 
@@ -113,7 +113,7 @@ function NavBar() {
                 <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
                   
                     <MDBNavbarItem>
-                    <MDBNavbarLink href='#'>
+                    <MDBNavbarLink href='User_student_registration'>
                         <MDBBtn size="lg" outline className='mx-2 text-white' style={{fontSize:'12px',letterSpacing:'2px'}} color='danger'>
                             Student
                         </MDBBtn>

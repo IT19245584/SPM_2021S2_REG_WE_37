@@ -5,6 +5,9 @@ import Admin from './components/admin'
 import Registration from './components/registration'
 import Index from './components/index'
 import User_teacher_login from './components/user_teacher_registration'
+import User_student_registration from './components/user_student_registration'
+import Login from './components/login'
+import Reset from './components/resetPassword'
 import { BrowserRouter as Router,Route} from 'react-router-dom'
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
                 <Route path="/Admin" exact component={Admin}/>
                 <Route path="/Registration" exact component={Registration}/>
                 <Route path="/User_teacher_login" exact component={User_teacher_login}/>
+                <Route path="/User_student_registration" exact component={User_student_registration}/>
+                <Route path="/Login" exact component={Login}/>
+                <Route path="/Reset" exact component={Reset}/>
          </div>
     </Router>
   );

@@ -1,1 +1,4 @@
+frontend/src/components/login.js
+frontend/src/components/resetPassword.js
+frontend/src/components/user_student_registration.js
 frontend/src/components/user_teacher_registration.js

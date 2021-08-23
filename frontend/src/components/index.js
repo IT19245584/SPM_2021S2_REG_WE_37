@@ -55,7 +55,7 @@ function Home() {
                                 </h1> 
                                 <p class="lead fw-normal text-white-50 mb-4">Courses designed by experts with real-world practice. Join our global community.</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-danger btn-lg px-4 me-sm-3" href="#features">Join now</a>
+                                    <a class="btn btn-danger btn-lg px-4 me-sm-3" href="/Login">Login</a>
                                     <a class="btn btn-outline-danger btn-lg px-4" href="#!">GET Pro</a>
                                 </div>
                             </div>
