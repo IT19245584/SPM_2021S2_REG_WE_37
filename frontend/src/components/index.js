@@ -28,10 +28,50 @@ import Cookies from 'js-cookie';
 import {reactLocalStorage} from 'reactjs-localstorage';
 import Navbar from './main_parts/navbar.js';
 import Footer from './main_parts/footer.js';
+import { send } from 'emailjs-com';
 
 function Home() {
     const [showBasic, setShowBasic] = useState(false);
     const [showNavRight, setShowNavRight] = useState(false);
+
+    const [name, setName] = useState("");
+    const [tel, setTel] = useState("");
+    const [feedback, setFeedback] = useState("");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+
+
+    function feedbackSubmit(e){
+        e.preventDefault();
+        send(
+            'service_82p5ozp',
+            'template_fn2duhs',
+            {
+              name: name,
+              title: title,
+              discription: description,
+              telephoneNumber: tel
+            },
+            'user_cShSlqMr50og4mezWIfzo'
+        )
+
+        .then((response) => {
+            	Swal.fire({  
+                    title: "Success!",
+                    text: "Email Sent",
+                    icon: 'success',
+                    confirmButtonText: "OK",
+                    type: "success"})
+         }).catch((err) => {
+                Swal.fire({  
+                    title: "Error!",
+                    text: "Email Not Sent",
+                    icon: 'error',
+                    confirmButtonText: "OK",
+                    type: "success"})
+        });
+    }
+
     return (
     <div>
         <div className="pt-1 pb-1" style={{backgroundColor:'#F4F4F4'}}>
@@ -241,6 +281,65 @@ function Home() {
                             </MDBCol>
                         </MDBRow>
                 </div>
+            </section>
+            <br/><br/>
+            <section className="container">
+                <MDBRow className="mt-5">
+                <MDBCol sm='1'></MDBCol>
+                 <MDBCol sm='6'>
+                    <MDBCard className="border-0 shadow-0 pt-5">
+                        <MDBCardImage style={{width:'100%'}} position='top' alt='...' src='https://i.imgur.com/G0bjc9d.png' />
+                    </MDBCard>
+                </MDBCol>
+                <MDBCol sm='5'>
+                    <MDBCard className="border-0 shadow-0">
+                    <MDBCardBody className=" text-left">
+                       <div className="bg-light p-4">
+                         <center><h2 className="text-uppercase">Feedback Form</h2></center>
+                       
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                         <input class="form-control" type="text" onChange={(e) =>{
+                            setName(e.target.value);
+                         }}/>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Telephone Number</label>
+                         <input class="form-control"  type="tel"  onChange={(e) =>{
+                            setTel(e.target.value);
+                         }}/>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Feedback Type</label>
+                          <select class="form-select" aria-label="Default select example"  onChange={(e) =>{
+                            setFeedback(e.target.value);
+                         }}>
+                            <option value="Negative">Negative</option>
+                            <option value="Possitive">Possitive</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Title</label>
+                          <input class="form-control"  type="text"   onChange={(e) =>{
+                            setTitle(e.target.value);
+                         }}/>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Discription</label>
+                          <textArea class="form-control" rows="4"  onChange={(e) =>{
+                            setDescription(e.target.value);
+                         }}></textArea>
+                        </div>
+                         <div class="mt-3 mb-2">
+                            <div class="d-grid gap-2">
+                                    <MDBBtn class="btn text-white bg-dark d-letter-spacing fw-light" onClick={feedbackSubmit}>Send</MDBBtn> 
+                            </div>
+                         </div>
+                       </div> 
+                    </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+                </MDBRow>
             </section>
             <br/><br/>
             <Footer/>
