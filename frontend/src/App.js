@@ -17,7 +17,7 @@ import View_Table_Course from './components/Course/course_view_table';
 import Add_Lesson from './components/Lesson/lesson_add';
 // import Lesson_Dashboard from './components/Lesson/lesson_dashboard';
 // import Update_Lesson from './components/Lesson/lesson_update';
-// import View_Table_Lesson from './components/Lesson/lesson_view_table';
+import View_Table_Lesson from './components/Lesson/lesson_view_table';
 // import View_Lesson from './components/Lesson/lesson_view';
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
                 {/* lessons */}
                 <Route path="/lesson" exact component={Add_Lesson}/>
                 {/* <Route path="/update" exact component={Update_Lesson}/> */}
-                {/* <Route path="/view-table-lesson" exact component={View_Table_Lesson}/> */}
+                <Route path="/view-table-lesson" exact component={View_Table_Lesson}/>
                 {/* <Route path="/view" exact component={View_Lesson}/> */}
         </div>
     </Router>
