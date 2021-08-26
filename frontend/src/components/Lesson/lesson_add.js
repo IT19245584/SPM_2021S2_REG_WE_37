@@ -108,7 +108,7 @@ function Add_Lesson() {
                                                 <label for="" className="form-label">Upload Video: </label>
                                                 <div className="input-group">
                                                     <span className="input-group-text bg-dark"><i className="bi bi-file-image text-white"></i></span>
-                                                    <input type="video/mp4" className="input-group form-control" name="l_video" id="l_video"
+                                                    <input type="file" className="input-group form-control" name="l_video" id="l_video"
                                                     onChange={(e) =>{
                                                         setL_video(e.target.value);
                                                     }}/>

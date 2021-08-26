@@ -115,15 +115,37 @@ return (
                                         <li class="nav-item">
                                             <a class="nav-link" href="dashboard-sales.html">......</a>
                                         </li>
+                                        /* <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Study Materials</a>
+                                            <div id="submenu-1-2" class="collapse submenu">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="index.html">Courses</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product.html">Lessons</a>
+                                                    </li>
+                                                    {/* <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
+                                                    </li> */}
+                                                </ul>
+                                            </div>
+                                        </li> *
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Teacher</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Study Materials</a>
                                 <div id="submenu-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/cards.html">..... </a>
+                                            <a class="nav-link" href="/view-table">Courses</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/view-table-lesson">Lessons</a>
                                         </li>
                                     </ul>
                                 </div>
