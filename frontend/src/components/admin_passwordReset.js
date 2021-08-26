@@ -68,7 +68,7 @@ function PasswordReset() {
         confirmButtonText: "OK",
         type: "success"}).then(okay => {
         if (okay) {
-            window.location.href = "/";
+            window.location.href = "/Admin.login";
         }
         });
 
