@@ -12,7 +12,7 @@ render() {
                 confirmButtonText: "OK",
                 type: "success"}).then(okay => {
                     if (okay) {
-                        window.location.href = "/Admin.Login";
+                        window.location.href = "/Login";
                     }
             });
     }
@@ -20,7 +20,7 @@ return (
   <div>
       <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bgTopNav fixed-top">
-                <a class="navbar-brand h1 fw-bold" style={{fontSize:'25px'}} href="Admin"><span className="text-black">E</span><span className="text-danger">-Learning</span></a>
+                <a class="navbar-brand h1 fw-bold" style={{fontSize:'25px'}} href="Admin"><span className="text-black">AMPE</span><span className="text-danger">A.V</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,50 +83,30 @@ return (
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
-                            <li class="nav-divider">
-                                Menu
-                            </li>
+                           <h4 className="mt-4 mb-4 text-warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</h4>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Admin <span class="badge badge-success">6</span></a>
-                                <div id="submenu-1" class="collapse submenu" >
-                                    <ul class="nav flex-column">
-                                        {/* <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">E-Commerce</a>
-                                            <div id="submenu-1-2" class="collapse submenu">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="index.html">E Commerce Dashboard</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product.html">Product List</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li> */}
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">....</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">......</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link active" style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> ADMIN </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Teacher</a>
-                                <div id="submenu-2" class="collapse submenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/cards.html">..... </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" href="#" style={{fontSize:'17px'}}  aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"> TEACHER</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> FACILITIES </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> SUBJECTS </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> NEWS </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> STUDENTS </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> CIRCULAR ACTIVITY </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " style={{fontSize:'17px'}} href="#"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"> EXAM </a>
                             </li>
                         </ul>
                     </div>

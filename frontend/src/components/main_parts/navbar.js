@@ -31,8 +31,7 @@ function NavBar() {
     const [showBasic, setShowBasic] = useState(false);
     const [showNavRight, setShowNavRight] = useState(false);
     return (
-            <div>
-                 <MDBNavbar expand='lg' className="sticky-top" light bgColor='dark'>
+           <MDBNavbar expand='lg' className="sticky-top" light bgColor='dark'>
             <MDBContainer fluid>
                 <MDBNavbarBrand href='/' style={{fontSize:'25px'}} className="pt-2 navbar-brand h1 fw-bold">
                     <MDBIcon fas icon="book-open" className="text-danger"/> <span className="text-danger">&nbsp;E</span><span className="text-white">-Learning</span>
@@ -131,7 +130,6 @@ function NavBar() {
                 </MDBCollapse>
             </MDBContainer>
             </MDBNavbar>
-            </div>
           )
 };
 

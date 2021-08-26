@@ -56,7 +56,6 @@ router.route('/login').post((req, res, next) => {
                         })    
                     }
                 })
-
         }else{
             res.json({
                 message: false
