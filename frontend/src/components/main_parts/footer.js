@@ -106,7 +106,7 @@ function Footer() {
                                         <a href="#!" class="text-reset">Help Center</a>
                                     </p>
                                     <p>
-                                        <a href="#!" class="text-reset">Terms</a>
+                                        <a href="Admin.Login" class="text-reset">Admin</a>
                                     </p>
                                     </div>
 
