@@ -10,7 +10,7 @@ import './asserts/css/style.css'
 //import course
 import Add_Course from './components/Course/course_add';
 import Course_Dashboard from './components/Course/course_dashboard';
-// import Update_Course from './components/Course/course_update';
+import Update_Course from './components/Course/course_update';
 import View_Table_Course from './components/Course/course_view_table';
 // import View_Course from './components/Course/course_view';
 
@@ -49,12 +49,10 @@ function App() {
                 <Route path="/Admin" exact component={Admin}/>
                 <Route path="/Registration" exact component={Registration}/>
 
-
-
                 {/* course */}
                 <Route path="/course" exact component={Add_Course}/>
                 <Route path="/course-dashboard" exact component={Course_Dashboard}/>
-                {/* <Route path="/update" exact component={Update_Course}/> */}
+                <Route path="/update-course" exact component={Update_Course}/>
                 <Route path="/view-table" exact component={View_Table_Course}/>
                 {/* <Route path="/view" exact component={View_Course}/> */}
 
