@@ -9,7 +9,7 @@ import styles from '../Course_css/course.module.css';
 function View_Table_Course() {
     const[Course, setCourse] = useState([]); 
     const[c_name, setC_name] = useState("");
-    // const[c_image, setC_image] = useState("");
+    const[c_image, setC_image] = useState("");
     const[c_description, setC_description] = useState("");
 
     useEffect(() =>{
@@ -39,6 +39,13 @@ function View_Table_Course() {
                 type: "success"})
         });
     }
+
+    //update
+    function update(id, c_name, c_image, c_description){
+        reactLocalStorage.setObject("Update_Course", [id, c_name, c_image, c_description]);
+        window.location.href = "/update-course"
+    }
+
 
     //search courses
     function search_course_function() {
@@ -107,7 +114,14 @@ function View_Table_Course() {
                                                     <a onClick={() => remove_course(course._id)} className="m-1 text-danger">
                                                         <i className="bi bi-trash-fill"></i>
                                                     </a>
-                                                </div>              
+                                                </div>   
+                                                <div className="col-1">
+                                                    <a onClick={() => update(
+                                                        course._id, course.c_name, course.c_image, course.c_description
+                                                        )} className="m-1 text-primary">
+                                                        <i className="bi bi-pencil-square"></i>
+                                                    </a>
+                                    </div>
                                             </div>
                                         </td>
                                     </tr>
