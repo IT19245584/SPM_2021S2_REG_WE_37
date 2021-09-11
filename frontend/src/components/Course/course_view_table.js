@@ -109,7 +109,7 @@ function View_Table_Course() {
                                         {/* <td>{course.c_image}</td> */}
                                         <td>{course.c_description}</td>
                                         <td>
-                                            <div className="row">
+                                            <div className="row" className={styles.noPrint}>
                                                 <div className="col-1">
                                                     <a onClick={() => remove_course(course._id)} className="m-1 text-danger">
                                                         <i className="bi bi-trash-fill"></i>
@@ -121,7 +121,7 @@ function View_Table_Course() {
                                                         )} className="m-1 text-primary">
                                                         <i className="bi bi-pencil-square"></i>
                                                     </a>
-                                    </div>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>

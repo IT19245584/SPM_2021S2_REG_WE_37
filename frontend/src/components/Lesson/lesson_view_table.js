@@ -44,7 +44,13 @@ function View_Table_Lesson() {
         });
     }
 
-    //search courses
+ //update
+    function update(id, l_name, lecturer, l_image, lesson_content, l_video, l_description){
+    reactLocalStorage.setObject("Update_Lesson", [id, l_name, lecturer, l_image, lesson_content, l_video, l_description]);
+    window.location.href = "/update-lesson"
+}
+
+    //search lessons
     function search_lesson_function() {
     // Declaring variables
     var input, search, table, tr, td, i, txtValue;
@@ -148,7 +154,14 @@ function View_Table_Lesson() {
                                                     <a onClick={() => remove_lesson(lesson._id)} className="m-1 text-danger">
                                                         <i className="bi bi-trash-fill"></i>
                                                     </a>
-                                                </div>              
+                                                </div>   
+                                                <div className="col-1">
+                                                    <a onClick={() => update(
+                                                        lesson._id, lesson.l_name, lesson.lecturer, lesson.l_image, lesson.lesson_content, lesson.l_video, lesson.l_description 
+                                                        )} className="m-1 text-primary">
+                                                        <i className="bi bi-pencil-square"></i>
+                                                    </a>
+                                                </div>           
                                             </div>
                                         </td>
                                     </tr>
