@@ -54,7 +54,7 @@ function App() {
                 <Route path="/course" exact component={Add_Course}/>
                 <Route path="/course-dashboard" exact component={Course_Dashboard}/>
                 <Route path="/update-course" exact component={Update_Course}/>
-                <Route path="/view-table" exact component={View_Table_Course}/>
+                <Route path="/view-table-course" exact component={View_Table_Course}/>
                 <Route path="/view-course" exact component={View_Course}/>
 
                 {/* lessons */}
