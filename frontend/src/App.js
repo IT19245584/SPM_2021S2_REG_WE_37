@@ -12,7 +12,7 @@ import Add_Course from './components/Course/course_add';
 import Course_Dashboard from './components/Course/course_dashboard';
 import Update_Course from './components/Course/course_update';
 import View_Table_Course from './components/Course/course_view_table';
-// import View_Course from './components/Course/course_view';
+import View_Course from './components/Course/course_view';
 
 //import lessons 
 import Add_Lesson from './components/Lesson/lesson_add';
@@ -54,7 +54,7 @@ function App() {
                 <Route path="/course-dashboard" exact component={Course_Dashboard}/>
                 <Route path="/update-course" exact component={Update_Course}/>
                 <Route path="/view-table" exact component={View_Table_Course}/>
-                {/* <Route path="/view" exact component={View_Course}/> */}
+                <Route path="/view" exact component={View_Course}/>
 
                 {/* lessons */}
                 <Route path="/lesson" exact component={Add_Lesson}/>
