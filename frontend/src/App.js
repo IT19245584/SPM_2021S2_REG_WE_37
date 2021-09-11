@@ -22,6 +22,12 @@ import View_Table_Lesson from './components/Lesson/lesson_view_table';
 import View_Lesson from './components/Lesson/lesson_view';
 // import View_Lesson_Paid from './components/Lesson/lesson_view_paid';
 
+//import lesson comment
+import Add_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_add';
+// import Update_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_update';
+// import View_Table_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_view_table';
+// import View_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_view';
+
 import CourseView from './components/Lecturer/ViewCourses';
 import ViewCourseAssessments from './components/Lecturer/ViewCourseAssesment';
 import ViewAssessment from './components/Lecturer/ViewAssessment';
@@ -63,6 +69,12 @@ function App() {
                 <Route path="/view-table-lesson" exact component={View_Table_Lesson}/>
                 <Route path="/view-lesson" exact component={View_Lesson}/>
                 {/* <Route path="/view-lesson-paid" exact component={View_Lesson_Paid}/> */}
+
+                {/* lesson_comment */}
+                <Route path="/lesson-comment" exact component={Add_Lesson_Comment}/>
+                {/* <Route path="/update-lesson-comment" exact component={Update_Lesson_Comment}/>
+                <Route path="/view-table-lesson-comment" exact component={View_Table_Lesson_Comment}/>
+                <Route path="/view-lesson-comment" exact component={View_Lesson_Comment}/> */}
 
                 <Route path="/lecturer/course" exact component={CourseView}/>
                 <Route path="/lecturer/courses/:id" component={ViewCourseAssessments}/>
