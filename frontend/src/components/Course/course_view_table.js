@@ -27,7 +27,7 @@ function View_Table_Course() {
                 confirmButtonText: "OK",
                 type: "success"}).then(okay => {
                     if (okay) {
-                        window.location.href = "/view-table";
+                        window.location.href = "/view-table-course";
                     }
                 });
         }).catch((err)=>{
@@ -90,7 +90,7 @@ function View_Table_Course() {
                     </div>
                     </div>
                     <div className={styles.noPrint}>
-                        <a className="mb-3 mx-3 btn btn-sm btn-outline-dark bi bi-arrow-repeat font-weight-bold text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh" href="/view-table"></a>
+                        <a className="mb-3 mx-3 btn btn-sm btn-outline-dark bi bi-arrow-repeat font-weight-bold text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh" href="/view-table-course"></a>
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-primary bi bi-plus-lg font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add" href="/course"></a>
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-danger bi bi-printer font-weight-bold text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print" onClick={() => window.print()}></a>
                     </div>

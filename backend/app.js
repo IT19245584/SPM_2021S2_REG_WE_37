@@ -31,6 +31,9 @@ app.use("/course", courses);
 const lessons = require("./routes/Lesson.js");
 app.use("/lesson", lessons);
 
+const comment_lessons = require("./routes/Comment_lesson.js");
+app.use("/comment-lesson", comment_lessons);
+
 const ExamRegistration = require("./routes/ExamRegistration")
 app.use("/ExamRegistration", ExamRegistration)
 
