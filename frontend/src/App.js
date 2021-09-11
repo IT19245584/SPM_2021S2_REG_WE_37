@@ -19,7 +19,8 @@ import Add_Lesson from './components/Lesson/lesson_add';
 // import Lesson_Dashboard from './components/Lesson/lesson_dashboard';
 import Update_Lesson from './components/Lesson/lesson_update';
 import View_Table_Lesson from './components/Lesson/lesson_view_table';
-// import View_Lesson from './components/Lesson/lesson_view';
+import View_Lesson from './components/Lesson/lesson_view';
+// import View_Lesson_Paid from './components/Lesson/lesson_view_paid';
 
 import CourseView from './components/Lecturer/ViewCourses';
 import ViewCourseAssessments from './components/Lecturer/ViewCourseAssesment';
@@ -54,13 +55,14 @@ function App() {
                 <Route path="/course-dashboard" exact component={Course_Dashboard}/>
                 <Route path="/update-course" exact component={Update_Course}/>
                 <Route path="/view-table" exact component={View_Table_Course}/>
-                <Route path="/view" exact component={View_Course}/>
+                <Route path="/view-course" exact component={View_Course}/>
 
                 {/* lessons */}
                 <Route path="/lesson" exact component={Add_Lesson}/>
                 <Route path="/update-lesson" exact component={Update_Lesson}/>
                 <Route path="/view-table-lesson" exact component={View_Table_Lesson}/>
-                {/* <Route path="/view" exact component={View_Lesson}/> */}
+                <Route path="/view-lesson" exact component={View_Lesson}/>
+                {/* <Route path="/view-lesson-paid" exact component={View_Lesson_Paid}/> */}
 
                 <Route path="/lecturer/course" exact component={CourseView}/>
                 <Route path="/lecturer/courses/:id" component={ViewCourseAssessments}/>

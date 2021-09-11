@@ -19,38 +19,6 @@ function View_Course() {
         .then(res => setCourse(res.data))
         .catch(error => console.log(error));
     });
-
-    function sendCourseData(e) {
-        e.preventDefault();
-        const courseView ={
-            c_name,
-            c_image,
-            c_description
-        }
-        axios.put("http://localhost:5000/course/update/"+id, courseView).then(() => {
-        const id = 0;   
-        Swal.fire({  
-                title: "Success!",
-                text: "Course Updated Successfully!",
-                icon: 'success',
-                confirmButtonText: "OK",
-                confirmButtonColor: "#00B74A",
-                type: "success"}).then(okay => {
-                    if (okay) {
-                        window.location.href = "/view-table";
-                    }
-                    });
-            }).catch((err)=>{
-    
-                Swal.fire({  
-                title: "Error!",
-                text: "Error In Updating! Try Again.",
-                icon: 'error',
-                confirmButtonText: "OK",
-                confirmButtonColor: "#F93154",
-                type: "success"})
-        })
-    }
     return(
         <div className="container-responsive bg-danger">
             <Course_Dashboard/>
@@ -65,7 +33,7 @@ function View_Course() {
                                             <h3 className="card-title ml-3 mb-2 text-center">Available Courses</h3>
                                                 <div className="row">
                                                     {Course.map((CoursedDetails, key) => (
-                                                        <div class="col-sm-3 mt-3">
+                                                        <div class="col-sm-4 mt-3">
                                                             <div class="card">
                                                                 <div className="text-center">
                                                                     <img className="card-img-top " style={{ width: '100%' }} src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/' + CoursedDetails.c_image} alt="Card image cap" />
