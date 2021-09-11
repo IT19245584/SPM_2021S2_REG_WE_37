@@ -21,7 +21,7 @@ function Update_Course() {
             c_image,
             c_description
         }
-        axios.put("http://localhost:5000/course/update/"+id, courseUpdate).then(() => {
+        axios.put("http://localhost:5000/course/update/:id"+id, courseUpdate).then(() => {
         const id = 0;   
         Swal.fire({  
                 title: "Success!",
