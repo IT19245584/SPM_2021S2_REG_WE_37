@@ -46,6 +46,11 @@ function View_Table_Course() {
         window.location.href = "/update-course"
     }
 
+    //view
+    function view(id, c_name, c_image, c_description){
+    reactLocalStorage.setObject("View_Course", [id, c_name, c_image, c_description]);
+    window.location.href = "/view"
+}
 
     //search courses
     function search_course_function() {
@@ -120,6 +125,13 @@ function View_Table_Course() {
                                                         course._id, course.c_name, course.c_image, course.c_description
                                                         )} className="m-1 text-primary">
                                                         <i className="bi bi-pencil-square"></i>
+                                                    </a>
+                                                </div>
+                                                <div className="col-1">
+                                                    <a onClick={() => view(
+                                                        course._id, course.c_name, course.c_image, course.c_description
+                                                        )} className="m-1 text-primary">
+                                                        <i className="bi bi-person"></i>
                                                     </a>
                                                 </div>
                                             </div>
