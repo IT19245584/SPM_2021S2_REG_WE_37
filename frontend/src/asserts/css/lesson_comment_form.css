@@ -1,0 +1,36 @@
+
+body{
+    background: rgb(247, 240, 240);
+}
+.comment_textbox{
+    background: rgb(247, 247, 247);
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.comment_textbox:hover{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+}
+
+.comment_box{
+    border-radius: 40px;
+}
+
+.comment_box:hover{
+    border: 2px solid rgb(206, 42, 42);
+}
+
+.comment_show{
+    border-radius: 10px;
+    background: pink;
+}
+
+.comment_image{
+    height: 35px;
+    width: 55px;
+}

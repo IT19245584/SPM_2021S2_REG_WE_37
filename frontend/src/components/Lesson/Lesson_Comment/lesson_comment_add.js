@@ -16,9 +16,11 @@ function Add_Lesson_Comment() {
     var lessonCommentView = reactLocalStorage.getObject('Add_Lesson_Comment');
     const [LessonComment, setLessonComment] = useState([]);
     const id = lessonCommentView[0];
-    const[s_name, setS_name] = useState(lessonCommentView[1]);
-    const[s_comment, setS_comment] = useState(lessonCommentView[2]);
-    // const[s_rating, setS_rating] = useState(lessonCommentView[3]);
+    const[s_name, setS_name] = useState("");
+    const[s_comment, setS_comment] = useState("");
+    const[statusEmpty, setstatusEmpty] = useState("");
+    const[btnStatus, setbtnStatus] = useState(true);
+    const[s_rating, setS_rating] = useState();
     // const[value, setValue] = useState(lessonCommentView[4]);
    
     useEffect(() =>{
@@ -49,21 +51,14 @@ function Add_Lesson_Comment() {
         });
     }
 
-    //save
-    // const[s_name, setS_name] = useState("");
-    // const[s_comment, setS_comment] = useState("");
-    // const[s_rating, setS_rating] = useState("");
-
-    // const [value, setValue] = React.useState(4);
-//   const [hover, setHover] = React.useState(-1);
-//   const classes = useStyles();
-
-    function sendCommentLessonData(e) {
-        e.preventDefault();
+    function sendCommentLessonData() {
+       
         const addCommentLesson ={
             s_name,
-            s_comment
+            s_comment,
+            s_rating
         }
+       
         axios.post("http://localhost:5000/comment-lesson/add", addCommentLesson).then(() => {
             Swal.fire({  
                 title: "Success!",
@@ -87,36 +82,46 @@ function Add_Lesson_Comment() {
                 type: "success"})
         })
     }
+
+    function setS_comments(e)
+    {
+        const comment = e;
+       if((comment == "") || (s_name == "") || (s_rating == "") || (s_rating < 0) || (s_rating >= 6))
+       {
+        setbtnStatus(true);
+        setstatusEmpty("Please Enter Valid Details");
+       }else{
+        setbtnStatus(false);
+        setstatusEmpty("                                  ");
+       }
+       setS_comment(comment)
+    }
+
     return(
         <div>
             {/* <Course_Dashboard/> */}
             <div className="container-fluid">
                 <div classNmae="container">
-                    <form className="p-3 mt-2">
-                        <div className="card mb-0" style={{maxWidth: "fixed"}}>
+                    <form className="p-5 mt-2">
+                        <div className="card mb-0 " style={{maxWidth: "fixed"}} >
                             <div className="row g-0">
                                 <div className="col-md-7 ">
                                     <div className="mt-0">
                                         <h3 className="card-title ml-3 mb-0 text-center mt-3">Available Comments</h3>
-                                            <div className="row p-4">
+                                            <div className="row p-3">
                                                 {LessonComment.map((lessonCommentDetails, key) => (
-                                                    <div class="col-md-6 my-3">
+                                                    <div class="col-md-10 m-2">
                                                         {/* <div class="card bg-warning"> */}
-                                                            <div className="shadow p-2 mb-1 bg-body rounded">
+                                                            <div className="shadow p-3 mb-1 bg-body comment_box ">
                                                             {/* <div className="p-2 border border-danger  rounded"> */}
                                                                 {/* <h5 className="card-title text-center text-capitalize">{lessonCommentDetails.name}</h5> */}
-                                                                <p className="card-text">
-                                                                    <span className="fw-bold">Name : </span>{lessonCommentDetails.s_name}<br />
-                                                                    <span className="fw-bold">Comment : </span>{lessonCommentDetails.s_comment}<br />
-                                                                    {/* <span className="fw-bold">Rating : </span>{lessonCommentDetails.s_rating}<br /> */}
-                                                                    {/* <span className="fw-bold">Rating : </span>{lessonCommentDetails.value}<br /> */}
-
-                                                            {/* </div> */}
-                                                            {/* <div className="card-footer bg-white border-0 text-end"> */}
-                                                                {/* <a className="text-primary"><i class="bi bi-pencil"></i></a> */}
-                                                                <a onClick={() => remove_comment(lessonCommentDetails._id)} className="m-1 text-danger">
-                                                        <i className="bi bi-trash-fill"></i>
-                                                    </a>
+                                                                <p className="card-text px-2">
+                                                                <span className="fw-bold"><img className="comment_image" src="https://i.dlpng.com/static/png/4723703-700-free-teacher-school-images-pixabay-teachr-and-student-png-501_340_preview.png"></img></span>
+                                                                    <span className="fw-bold"></span>   <span className="badge badge-success">{lessonCommentDetails.s_name}</span> <a onClick={() => remove_comment(lessonCommentDetails._id)} className=" text-danger">
+                                                                        <i className="bi bi-trash-fill"></i>
+                                                                    </a><br />
+                                                                    <span className="fw-bold"> </span>{lessonCommentDetails.s_comment}<br />
+                                                                    <span className="fw-bold"> </span><span className="badge badge-warning comment_show">{lessonCommentDetails.s_rating}</span>/5<br />
                                                                 </p>
                                                                 </div>
                                                         </div>
@@ -127,44 +132,47 @@ function Add_Lesson_Comment() {
                                 </div>
                                 <div className="col-md-5" >
                                     <div className="card-body ">
-                                        <div className=" mt-5 col-md-12 shadow rounded">
+                                        <div className=" mt-5 col-md-10 shadow rounded">
                                         <h3 className="card-title ml-3 mb-2">New Comment</h3>
-                                            <div className="col-md-12 my-4">
+                                        <center>
+                                            <div className="col-md-8 my-4">
                                                 {/* <label for="" className="form-label text-left">Student Name: </label> */}
                                                 <div className="input-group">
                                                     {/* <span className="input-group-text bg-dark"><i className="bi bi-card-heading text-white"></i></span> */}
-                                                    <input type="text" placeholder="Name" className="input-group form-control comment_textbox" id="s_name" name="s_name" 
+                                                    <input type="text" placeholder="Name" className="input-group form-control comment_textbox p-2" id="s_name" name="s_name" 
                                                         onChange={(e) =>{
                                                         setS_name(e.target.value);
                                                     }} />
                                                 </div> 
                                             </div>
-                                            <div className="col-md-12 my-4">
-                                                {/* <label for="" className="form-label text-left">Comment: </label> */}
-                                                <div className="input-group ">
-                                                    {/* <span className="input-group-text bg-dark"><i className="bi bi-code text-white"></i></span> */}
-                                                    <textarea placeholder="Comment" className="input-group comment_textbox" id="s_comment" name="s_comment" rows="5" cols="30"
-                                                    onChange={(e) =>{
-                                                        setS_comment(e.target.value);
-                                                    }}>
-                                                    </textarea>
-                                                </div> 
-                                            </div>
-                                            {/* <div className="col-md-8 mb-1">
-                                                <label for="" className="form-label">Rate Lesson (5): </label>
+                                            <div className="col-md-8 mb-1">
+                                                {/* <label for="" className="form-label">Rate Lesson (5): </label> */}
                                                 <div className="input-group">
-                                                    <span className="input-group-text bg-dark"><i className="bi bi-file-image text-white"></i></span>
-                                                    <input type="number"  maxLength={1} min={0} max={5} className="input-group form-control" name="s_rating" id="s_rating"
+                                                    {/* <span className="input-group-text bg-dark"><i className="bi bi-file-image text-white"></i></span> */}
+                                                    <input type="number" min={0} placeholder="Rating(5)" className="input-group form-control comment_textbox p-2" name="s_rating" id="s_rating"
                                                     onChange={(e) =>{
                                                         setS_rating(e.target.value);
                                                     }}/>
                                                 </div> 
-                                            </div> */}
+                                            </div>
+                                            <div className="col-md-8 my-4">
+                                                {/* <label for="" className="form-label text-left">Comment: </label> */}
+                                                <div className="input-group ">
+                                                    {/* <span className="input-group-text bg-dark"><i className="bi bi-code text-white"></i></span> */}
+                                                    <textarea placeholder="Comment" className="input-group comment_textbox p-2" id="s_comment" name="s_comment" rows="4" cols="30"
+                                                    onChange={(e) =>{
+                                                        setS_comments(e.target.value);
+                                                    }}>
+                                                    </textarea>
+                                                    <span className="text-danger">{statusEmpty}</span>
+                                                </div> 
+                                            </div>
 
                                             <div className="">
-                                                    <button type="submit" name="submit" onClick={sendCommentLessonData} className="btn btn-sm btn-outline-danger mb-3 mx-3">ADD COMMENT</button>   
+                                                    <button type="button" name="submit" disabled={btnStatus} onClick={sendCommentLessonData} className="btn btn-sm btn-outline-danger mb-3 mx-3">ADD COMMENT</button>   
                                                     <input type="reset" value="RESET DATA" className="btn btn-sm btn-outline-dark  mb-3 mx-3"/>
                                             </div>
+                                            </center>
                                         </div>
                                     </div>
                                 </div>
