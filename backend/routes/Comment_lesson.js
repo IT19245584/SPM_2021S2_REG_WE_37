@@ -5,12 +5,11 @@ let Comment = require('../models/Comment_lesson');
 router.route('/add').post((req,res) => {
     const s_name = req.body.s_name;
     const s_comment = req.body.s_comment;
-    const s_rating = req.body.s_rating;
+    // const s_rating = req.body.s_rating;
 
     const newComment = new Comment({
         s_name,
-        s_comment,
-        s_rating
+        s_comment
     })
 
     newComment.save().then(() =>{
@@ -32,13 +31,12 @@ router.route("/view-all").get((req, res) => {
 //update comment
 router.route("/update/:id").put(async (req, res) => {
     let CommentID = req.params.id;
-    const { s_name, s_comment, s_rating
+    const { s_name, s_comment
     } = req.body;
 
     const updateComment = {
         s_name,
-        s_comment,
-        s_rating
+        s_comment
     }
 
     const update = await Comment.findByIdAndUpdate(CommentID, updateComment)

@@ -10,11 +10,7 @@ const commentSchema = new Schema({
     s_comment: {
         type: String,
         required: true
-    },
-    s_rating: {
-        type: String,
-        required: true
-    }        
+    }      
 }, {
 timestamps: true
 });
