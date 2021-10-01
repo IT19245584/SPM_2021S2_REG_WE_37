@@ -40,9 +40,6 @@ app.use("/ExamRegistration", ExamRegistration)
 const Payment = require("./routes/Payment")
 app.use("/Payment", Payment)
 
-const student = require("./routes/Student");
-app.use("/student", student);
-
 const students = require('./routes/studentRoute');
 app.use('/students',students)
 
