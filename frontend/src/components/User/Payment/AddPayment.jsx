@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import Swal from 'sweetalert2';
 import Header from "../header";
 import axios from 'axios';
+import {reactLocalStorage} from 'reactjs-localstorage';
 
 export default function Payment(){
-
+  var Payment = reactLocalStorage.getObject('PaymentHistory');
+  const [amount, setamount] = useState(Payment[4]);
   const [accNo, setaccNo] = useState("");
-  const [amount, setamount] = useState("");
+  //const [amount, setamount] = useState("");
   const [expiryDate, setexpiryDate] = useState("");
   const [cvc, setcvc] = useState("");
   const [email, setemail] = useState("");
@@ -20,7 +22,6 @@ export default function Payment(){
   function sendDate(e){
     e.preventDefault();
 
-    const amount = "3444";
     const payment ={
       accNo, 
       amount, 
@@ -49,7 +50,7 @@ export default function Payment(){
 
 			Swal.fire({  
 			title: "Error!",
-			text: "Registration to the Examination Unsuccessful! Try Again.",
+			text: "Payment Unsuccessful! Please fill all the fiels.",
 			icon: 'error',
 			confirmButtonText: "OK",
             confirmButtonColor: "#F93154",
@@ -65,31 +66,30 @@ export default function Payment(){
               <img src="https://i.imgur.com/Gi5lMXq.jpeg" style={{width:'100%'}} class="img-fluid pt-6" alt="Responsive image"/>
               </div>
               <div class="col-sm-6 p-3 bg-light">
-              <h2 style={{display: 'flex',  justifyContent:'center', alignItems:'center',height:"60px" }}>Payment Details</h2>
+              <h2 style={{display: 'flex',  justifyContent:'center', alignItems:'center',height:"60px" }}><b>Payment Details</b></h2>
               <div style={{ justifyContent:'center', alignItems:'center' }}>
               <div className="row mb-1">
                   <div class="mb-1 col-6">
-                    <label class="form-label">Account Number </label>
-                    <input type="text" class="form-control"  placeholder="Enter Account number" onChange={(e) =>{
+                    <label style={{color:'black'}}  class="form-label"><b>Account Number </b></label>
+                    <input type="number" class="form-control"  placeholder="Enter Account number" onChange={(e) =>{
                               setaccNo(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-1 col-4">
-                    <label class="form-label">Amount </label>
-                    <input class="form-control" disabled={true} placeholder="                              $2000" onChange={(e) =>{
-                               setamount(e.target.value);
-                            }}/>
+                    <label style={{color:'black'}}  class="form-label"><b>Amount </b></label>
+                    <input class="form-control" disabled={true} placeholder="$2000"onChange={(e) => { setamount(e.target.value) }} value={amount}
+                            />
                   </div>
                   </div>
                   <div className="row mb-1">
                   <div class="mb-1 col-6">
-                    <label class="form-label">Expeir Date </label>
+                    <label style={{color:'black'}}  class="form-label"><b>Expeir Date </b></label>
                     <input type="date" class="form-control"  placeholder="" onChange={(e) =>{
                               setexpiryDate(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-1 col-4">
-                    <label class="form-label">CVC </label>
+                    <label style={{color:'black'}}  class="form-label"><b>CVC </b></label>
                     <input type="number" class="form-control"  placeholder="Enter CVC" onChange={(e) =>{
                              setcvc(e.target.value);
                             }}/>
@@ -97,7 +97,7 @@ export default function Payment(){
                   </div>
                   <div class="row mb-1">
                   <div class="mb-1 col-10">
-                    <label class="form-label">Email </label>
+                    <label style={{color:'black'}}  class="form-label"><b>Email </b></label>
                     <input type="email" class="form-control"  placeholder="Enter Email" onChange={(e) =>{
                              setemail(e.target.value);
                             }}/>

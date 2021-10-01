@@ -1,0 +1,353 @@
+    
+import React, {Component} from 'react';
+import axios from 'axios';
+import {Link} from "react-router-dom";
+import Swal from 'sweetalert2';
+import '../APIUrl';
+import Navbar from '../header';
+
+import {
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBIcon,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBBtn,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBDropdownLink,
+  MDBCollapse,
+  MDBCardImage,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBCarouselElement,
+  MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol
+} from 'mdb-react-ui-kit';
+
+class StudentRegister extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.onChangeConPassword = this.onChangeConPassword.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
+        this.onChangeFullName = this.onChangeFullName.bind(this);
+        this.onChangePhone = this.onChangePhone.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.validate = this.validate.bind(this);
+
+        this.state = {
+            fullName: '',
+            email: '',
+            phone: '',
+            password: '',
+            conPassword: '',
+            error: {}
+        };
+
+    }
+
+    onChangeFullName(e) {
+        this.setState({
+            fullName: e.target.value
+        });
+    }
+
+    onChangeEmail(e) {
+        this.setState({
+            email: e.target.value
+        })
+    }
+
+    onChangePhone(e) {
+        this.setState({
+            phone: e.target.value
+        })
+    }
+
+    onChangePassword(e) {
+        this.setState({
+            password: e.target.value
+        })
+    }
+
+    onChangeConPassword(e) {
+        this.setState({
+            conPassword: e.target.value
+        })
+    }
+
+    onSubmit = e => {
+        e.preventDefault();
+
+        if (this.validate()) {
+            console.log('submitted');
+            console.log(this.state);
+
+            const newStudent = {
+                fullName: this.state.fullName,
+                email: this.state.email,
+                contactNum: this.state.phone,
+                password: this.state.password
+            };
+
+            axios.post('http://localhost:5000/students/register', newStudent)
+                .then(res => {
+                    console.log(res.data);
+
+                    if (res.data.data) {
+                        Swal.fire({
+                            title: 'Registration Successful',
+                            type: 'success',
+                            confirmButtonText: 'OK!',
+                        }).then((result) => {
+
+                            if (result.value) {
+                                sessionStorage.setItem('userId', res.data.data._id);
+                                sessionStorage.setItem('loggedUser', res.data.data.email);
+                                sessionStorage.setItem('userType', 'student');
+                                window.location.href = "/login";
+                            }
+                        });
+                    }else {
+                        Swal.fire('Oops...', 'Student is already exist', 'error');
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    Swal.fire('Oops...', 'Registration Failed', 'error');
+                });
+
+            this.setState({
+                fullName: '',
+                stdID: '',
+                email: '',
+                phone: '',
+                campus: '',
+                password: '',
+                conPassword: ''
+            })
+        } else {
+            alert('Check the validation');
+        }
+
+    };
+
+    validate = () => {
+
+        let isValid = true;
+        let errors = {};
+
+        errors["Submitted"] = 'Submitted';
+
+        console.log("validation worked");
+
+        if (!this.state.fullName.match(/^[a-zA-Z ]*$/)) {
+
+            errors["Full Name"] = 'Only Letters ';
+            isValid = false;
+        }
+
+        if (!this.state.phone.match(/^[0-9+ ]*$/)) {
+            errors["Conatct"] = 'Enter Numbers and + sign only';
+            isValid = false;
+        }
+
+        if (this.state.phone.length < 9) {
+            errors["Conatct"] = 'Minimum 9 characters';
+            isValid = false;
+        }
+
+        if (this.state.password.length < 8) {
+            errors["Password"] = 'Minimum 8 characters';
+            isValid = false;
+        }
+
+        if (this.state.conPassword !== this.state.password) {
+            errors["Password"] = 'Passwords is not match';
+            isValid = false;
+        }
+
+        this.setState({
+            error: errors
+        });
+
+        console.log(isValid);
+        return isValid;
+
+    };
+
+
+    render() {
+        return (
+            <div>
+            <Navbar/>
+            <MDBRow  style={{marginTop:'2%', marginBottom:'10%', width:'99%'}}>
+            <MDBCol sm='1'></MDBCol>
+             <MDBCol sm='6'>
+                <MDBCard className="border-0 shadow-0">
+                    <MDBCardImage style={{width:'79%'}} position='top' alt='...' src='./img/student.jpeg' />
+                </MDBCard>
+            </MDBCol>
+            <MDBCol sm='5'  style={{marginTop:'0%', marginLeft:'-5%'}}>
+                <MDBCard className="border-0 shadow-0">
+                <MDBCardBody className="pt-5 mt-3 text-left">
+                <form onSubmit={this.onSubmit}>
+
+                   <div className="bg-light p-4">
+                     <center><h2 className="text-uppercase">Sing Up (Student)</h2></center>
+                     <br/>
+                    <div class="mb-3">
+                        <div className="input-group ml-2 mr-2 mt-3">
+                        <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fa fa-user-circle"/></span>
+                            </div>
+                      <input type="text"
+                                   className="form-control mr-3"
+                                   id="fullName"
+                                   value={this.state.fullName}
+                                   onChange={this.onChangeFullName}
+                                   placeholder="Enter your name"
+                                   required/>
+                         </div>
+                                    {this.state.fullName === '' &&
+                        <div style={{fontSize: 'small', float: 'right', color: 'green', margin: '0 10px 0 0'}}>The name
+                            field is empty</div>}
+                        {
+                            !this.state.fullName.match(/^[a-zA-Z ]*$/) &&
+                            <div style={{fontSize: 'small', float: 'right', color: 'red', margin: '0 10px 0 0'}}>Enter
+                                 Characters Only</div>
+                        }
+                        <br/>
+                    </div>
+                     <div class="mb-3">
+                         <div className="input-group ml-2 mr-2 mt-3">
+                         <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fa fa-envelope"/></span>
+                            </div>
+                      <input type="email"
+                                   className="form-control mr-3"
+                                   id="email"
+                                   value={this.state.email}
+                                   onChange={this.onChangeEmail}
+                                   placeholder="Email"
+                                   required/>
+                            </div>
+                                   {this.state.email === '' &&
+                        <div style={{fontSize: 'small', float: 'right', color: 'green', margin: '0 10px 0 0'}}>The email
+                            field is empty</div>}
+                            <br/>
+                    </div>
+                    <div class="mb-3">
+                        <div className="input-group ml-2 mr-2 mt-3">
+                        <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fa fa-phone"/></span>
+                            </div>
+                      <input type="text"
+                                   className="form-control mr-3"
+                                   id="phone"
+                                   value={this.state.phone}
+                                   onChange={this.onChangePhone}
+                                   placeholder="Phone Number: eg-07********"
+                                   required/>
+                                   </div>
+                                   {this.state.phone === '' &&
+                        <div style={{fontSize: 'small', float: 'right', color: 'green', margin: '0 10px 0 0'}}>The phone number
+                            field is empty</div>}
+                        {
+                            !this.state.phone.match(/^[0-9+ ]*$/) && this.state.phone !== '' &&
+                            <div style={{fontSize: 'small', float: 'right', color: 'red', margin: '0 10px 0 0'}}>Use
+                                 number Characters and '+' Only</div>
+                        }
+                        {
+                            this.state.phone.length < 9 && this.state.phone !== '' &&
+                            <div style={{fontSize: 'small', float: 'right', color: 'red', margin: '0 10px 0 0'}}>Minimum
+                                9 numbers.</div>
+                        }
+                        <br/>
+                    </div>
+                    {/* <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Address</label>
+                      <input type="text" class="form-control" 
+                      onChange={(e) =>{
+                          setAddress(e.target.value);
+                      }}/>
+                    </div> */}
+                    <div class="mb-3">
+                        <div className="input-group ml-2 mr-2 mt-3">
+                        <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fa fa-key"/></span>
+                      </div>
+
+                      <input type="password"
+                                   className="form-control mr-3"
+                                   id="password"
+                                   value={this.state.password}
+                                   onChange={this.onChangePassword}
+                                   placeholder="Password"
+                                   required/>
+                                   </div>
+                                   {this.state.password === '' &&
+                        <div style={{fontSize: 'small', float: 'right', color: 'green', margin: '0 10px 0 0'}}>The
+                            password field is empty</div>}
+                        {
+                            (this.state.password.length < 8) && this.state.password !== '' &&
+                            <div style={{fontSize: 'small', float: 'right', color: 'red', margin: '0 10px 0 0'}}>Enter
+                                more than 8 characters</div>
+                        }
+                   <br/>
+                    </div>
+                    <div class="mb-3">
+                        <div className="input-group ml-2 mr-2 mt-3">
+                      
+                      <div className="input-group-prepend">
+                                <span className="input-group-text"><i className="fa fa-key"/></span>
+                      </div>
+                      <input type="password"
+                                   className="form-control mr-3"
+                                   id="conPassword"
+                                   value={this.state.conPassword}
+                                   onChange={this.onChangeConPassword}
+                                   placeholder="Re-type password"
+                                   required/>
+                                   </div>
+                      {this.state.conPassword === '' &&
+                        <div style={{fontSize: 'small', float: 'right', color: 'green', margin: '0 10px 0 0'}}>The
+                            confirm password field is empty</div>}
+                        {
+                            (this.state.password !== this.state.conPassword) && this.state.conPassword !== '' &&
+                            <div style={{fontSize: 'small', float: 'right', color: 'red', margin: '0 10px 0 0'}}>Not
+                                matching with password</div>
+                        }
+                        <br/>
+                    </div>                   
+                     <div class="mt-3 mb-2">
+                        <div class="d-grid gap-2">
+                        <input type="submit" className="btn btn-dark" value="Sign Up"/>
+                        </div>
+                     </div>
+                     <center>
+                     <div className="text-center mt-3">
+                            <label className="ml-5 mb-3 text-muted">Have an account ?</label>
+                            <Link to="/login"className="alert-link mr-5"> Sign In</Link>
+                        </div>
+               
+                     </center>
+                   </div> 
+                   </form>
+                </MDBCardBody>
+                </MDBCard>
+            </MDBCol>
+            </MDBRow>
+        </div>
+        )
+    }
+}
+
+export default StudentRegister;

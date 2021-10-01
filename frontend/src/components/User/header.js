@@ -58,7 +58,7 @@ function Header() {
                             <MDBDropdownLink><a class="nav-link active" aria-current="page" href="/development">Development</a></MDBDropdownLink>
                         </MDBDropdownItem>
                         <MDBDropdownItem>
-                            <MDBDropdownLink>Bussiness</MDBDropdownLink>
+                            <MDBDropdownLink><a class="nav-link active" aria-current="page" href="/businness">Bussiness</a></MDBDropdownLink>
                         </MDBDropdownItem>
                         <MDBDropdownItem>
                             <MDBDropdownLink>Finance & Accounting</MDBDropdownLink>
@@ -67,7 +67,7 @@ function Header() {
                             <MDBDropdownLink>Design</MDBDropdownLink>
                         </MDBDropdownItem>
                         <MDBDropdownItem>
-                            <MDBDropdownLink>Music</MDBDropdownLink>
+                            <MDBDropdownLink><a class="nav-link active" aria-current="page" href="/music">Music</a></MDBDropdownLink>
                         </MDBDropdownItem>
                         <MDBDropdownItem>
                             <MDBDropdownLink>IT & Software</MDBDropdownLink>
@@ -86,30 +86,36 @@ function Header() {
                     </MDBNavbarItem>
 
                     <MDBNavbarItem>
-                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
-                        Discuss
+                    <MDBNavbarLink href='/examregistration' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
+                        Exam Registration
                     </MDBNavbarLink>
                     </MDBNavbarItem>
-                     <MDBNavbarItem>
-                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
-                        Discuss
-                    </MDBNavbarLink>
-                    </MDBNavbarItem>
+
                     <MDBNavbarItem>
                     <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
                         Blog
                     </MDBNavbarLink>
                     </MDBNavbarItem>
+
                 </MDBNavbarNav>
 
                <MDBCollapse navbar show={showNavRight}>
                 <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
                     <MDBNavbarItem>
-                    <MDBNavbarLink  href='#'  >
-                     <span className="text-muted">
-                     <MDBIcon fas icon="user-circle"  size='3x'  />
-                     </span> 
-                    </MDBNavbarLink>
+                    <MDBDropdown>
+                   
+                    <MDBDropdownToggle tag='a' style={{color: '#DCDCDC', cursor: 'pointer'}}  className='nav-link'>
+                    <MDBIcon fas icon="user-circle"  size='3x'  />
+                        </MDBDropdownToggle>
+                    <MDBDropdownMenu>
+                        <MDBDropdownItem>
+                            <MDBDropdownLink><a class="nav-link active" aria-current="page" href="/studentProfile">Student Profile</a></MDBDropdownLink>
+                        </MDBDropdownItem>
+                        <MDBDropdownItem>
+                            <MDBDropdownLink><a class="nav-link active" aria-current="page" href="/">Log Out</a></MDBDropdownLink>
+                        </MDBDropdownItem>
+                        </MDBDropdownMenu>
+                    </MDBDropdown>
                     </MDBNavbarItem>
                 </MDBNavbarNav>
                 </MDBCollapse>
