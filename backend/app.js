@@ -36,6 +36,9 @@ app.use("/ExamRegistration", ExamRegistration)
 const Payment = require("./routes/Payment")
 app.use("/Payment", Payment)
 
+const Profile = require("./routes/Profile")
+app.use("/Profile", Profile)
+
 
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
