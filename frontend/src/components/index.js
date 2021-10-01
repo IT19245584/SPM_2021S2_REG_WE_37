@@ -118,14 +118,14 @@ function Home() {
                 <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
                   
                     <MDBNavbarItem>
-                    <MDBNavbarLink href='#'>
+                    <MDBNavbarLink href='/studentRegistration'>
                         <MDBBtn size="lg" outline className='mx-2 text-white' style={{fontSize:'12px',letterSpacing:'2px'}} color='danger'>
                             Student
                         </MDBBtn>
                     </MDBNavbarLink>
                     </MDBNavbarItem>
                     <MDBNavbarItem>
-                    <MDBNavbarLink  href='#'  >
+                    <MDBNavbarLink  href='/teacherRegistration'  >
                         <MDBBtn size="lg" className='mx-2' color='danger'  style={{fontSize:'12px',letterSpacing:'2px'}} >
                             Teacher
                         </MDBBtn>
