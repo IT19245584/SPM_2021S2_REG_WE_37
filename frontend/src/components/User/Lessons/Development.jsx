@@ -11,8 +11,8 @@ function HomePage() {
                     <div className="row ps-5">
                         <div className="col-sm-1 "></div>
                         <div className="col-sm-10 ">                          
-                            <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>Got ideas for a cool new workshop you plan on spearheading?</span>
-                            <h5 className="fw-normal " style={{ paddingTop: '10%' }}>Well that’s great news. However, there’s going to be a lot of work needed to turn your plans into an effective reality, starting with workshop agendas. If that term is unfamiliar to you, then you’ve come to the right place. Besides providing you with tips and trivia, this article also comes with its own list of workshop agenda templates that you can easily download for your own needs! Don’t just sit there staring at your screen; start scrolling now!
+                            <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>Music Theory: Musical Form</span>
+                            <h5 className="fw-normal " style={{ paddingTop: '10%' }}>This free online music theory course teaches you about musical form. In this course you will study the six models in classical music from sonata-allegro to rondo form and how each model was formed including their differences. You will also look into the features of verse and chorus and the four functional types that will show up in a sonata-allegro form, how the same material can return at certain points in a musical piece, and more!
                             <br />
                             </h5><br/><br/>
                             <div id="carouselExampleIndicators" class="carousel slide sld1 " data-ride="carousel">
@@ -25,16 +25,16 @@ function HomePage() {
                                 </ol>
                                 <div class="carousel-inner ">
                                 <div class="carousel-item active">
-                                <img class="d-block w-100" style={{height:'50%'}} src={img5} alt="First slide" />
+                                <img class="d-block w-100" style={{height:'50%'}} src="./img/Online-Music-Learning-Tutorial-2.png" alt="First slide" />
                                 </div>
                                 <div class="carousel-item">
-                                <img class="d-block w-100" style={{height:'20%'}} src="https://i.imgur.com/wwjSkZY.jpeg" alt="Second slide" />
+                                <img class="d-block w-100" style={{height:'20%'}} src="./img/Music-Courses.jpg" alt="Second slide" />
                                 </div>
                                 <div class="carousel-item">
-                                <img class="d-block w-100" style={{height:'20%'}} src={img5} alt="Third slide" />
+                                <img class="d-block w-100" style={{height:'20%'}} src="./img/muc.jpg" alt="Third slide" />
                                 </div>
                                 <div class="carousel-item">
-                                <img class="d-block w-100" style={{height:'20%'}} src={img5} alt="fourth slide" />
+                                <img class="d-block w-100" style={{height:'20%'}} src="./img/Online-Music-Learning-Tutorial-2.png" alt="fourth slide" />
                                 </div>
                                 <div class="carousel-item">
                                 <img class="d-block w-100" style={{height:'20%'}} src={img5}alt="fourth slide" />
@@ -50,7 +50,7 @@ function HomePage() {
                     </a>
             </div><br/>
                 <h6>
-                The workshop header displays key information about the workshop record that is currently open, and shows at the top of each workshop detail tab. The header itself cannot be edited, but the fields that display in the header may be edited elsewhere in the workshop detail record, or populate automatically.  The workshop header will update to display any changes.<br/><br/></h6>
+                This course will first introduce you to the six models in classical music which are the ternary form, sonata-allegro form, theme and variations, rondo, fugue, and ostinato. You will learn how they were developed at various times in the history of music. You will learn that theme and variations are the most established forms, and that sonata-allegro is more recent but is the most complex and the most difficult of all of these forms.<br/><br/></h6>
                 </div>
                 <div className="col-sm-1 "></div>
             </div>                 

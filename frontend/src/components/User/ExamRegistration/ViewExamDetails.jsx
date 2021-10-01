@@ -117,6 +117,7 @@ class Exam extends Component {
                                         <th scope="col">Payment Status</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Unenroll from lesson</th>
+                                        <th scope="col">Pay</th>
                                     </tr>
                                 </thead>
                                 {this.state?.guest?.length > 0 && this.state.guest.map((item, index) =>
@@ -136,6 +137,9 @@ class Exam extends Component {
                                                 <button type="button" class="btn btn-danger"
                                                     onClick={() => this.deleteData(item._id)}>Unenroll</button>
                                             </td>
+                                            <td>
+                                                <button type="button" class="btn btn-dark"> <a style={{color:'white'}} href='/payment'>Pay</a></button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 )}
@@ -150,7 +154,7 @@ class Exam extends Component {
                         </div>
                     </a>
                 </div>
-                <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px',marginTop:'-7%' }}>
+                {/* <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px',marginTop:'-7%' }}>
                 <div style={{ height: '300px' }}>
                     <div className="row row-cols-1 row-cols-md-3 g-4" className="text-center container">
                         <div className="col">
@@ -163,7 +167,7 @@ class Exam extends Component {
                         </div>                      
                     </div>
                 </div>
-            </div>
+            </div> */}
             </div>
         );
     }
