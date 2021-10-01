@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 const url = process.env.ATLAS_URI;
 global.URL = url;
@@ -30,6 +31,9 @@ app.use("/course", courses);
 const lessons = require("./routes/Lesson.js");
 app.use("/lesson", lessons);
 
+const comment_lessons = require("./routes/Comment_lesson.js");
+app.use("/comment-lesson", comment_lessons);
+
 const ExamRegistration = require("./routes/ExamRegistration")
 app.use("/ExamRegistration", ExamRegistration)
 
@@ -38,6 +42,11 @@ app.use("/Payment", Payment)
 
 const Profile = require("./routes/Profile")
 app.use("/Profile", Profile)
+
+app.use('/assessments',require('./routes/assesmentRoute'));
+app.use('/cv',require('./routes/cvSubmissionRoute'));
+app.use('/submissions',require('./routes/submissionRoute'));
+app.use('/students',require('./routes/studentRoute'));
 
 
 app.listen(port,() =>{

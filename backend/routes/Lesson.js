@@ -31,7 +31,7 @@ router.route('/add').post((req,res) => {
 
 //Lesson->url
 //view all via table view
-router.route("/view-all").get((req, res) => {
+router.route("/view-all-l").get((req, res) => {
     Lesson.find().then((Lesson) => {
         res.json(Lesson)
     }).catch((err) => {

@@ -92,8 +92,8 @@ function Header() {
                     </MDBNavbarItem>
 
                     <MDBNavbarItem>
-                    <MDBNavbarLink href='#' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
-                        Blog
+                    <MDBNavbarLink href='/user/request' tabIndex={-1} aria-disabled='true' style={{color: '#DCDCDC', cursor: 'pointer'}}>
+                        Become A Lecturer
                     </MDBNavbarLink>
                     </MDBNavbarItem>
 
