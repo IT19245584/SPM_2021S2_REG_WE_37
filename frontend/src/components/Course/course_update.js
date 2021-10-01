@@ -11,7 +11,7 @@ function Update_Course() {
 
     const id = courseUpdate[0];
     const[c_name, setC_name] = useState(courseUpdate[1]);
-    const[c_image, setC_image] = useState(courseUpdate[2]);
+    const[c_image, setC_image] = useState("https://res.cloudinary.com/dece6pnob/image/upload/v1633068234/"+courseUpdate[2]);
     const[c_description, setC_description] = useState(courseUpdate[3]);
 
     function sendCourseData(e) {
@@ -21,7 +21,7 @@ function Update_Course() {
             c_image,
             c_description
         }
-        axios.put("http://localhost:5000/course/update/:id"+id, courseUpdate).then(() => {
+        axios.put("http://localhost:5000/course/update/"+id, courseUpdate).then(() => {
         const id = 0;   
         Swal.fire({  
                 title: "Success!",
@@ -31,7 +31,7 @@ function Update_Course() {
                 confirmButtonColor: "#00B74A",
                 type: "success"}).then(okay => {
                     if (okay) {
-                        window.location.href = "/view-table";
+                        window.location.href = "/view-table-course";
                     }
                     });
             }).catch((err)=>{
@@ -55,14 +55,10 @@ function Update_Course() {
                             <div className="row g-0">
                                 <div className="col-md-7 ">
                                     <div className="mt-0">
-                                        <img src="https://www.vippng.com/png/detail/109-1091109_developer-cartoon-programmer.png" className="mt-0 img-fluid rounded-start" alt="update-image"/>
+                                        {/* <img src="https://www.vippng.com/png/detail/109-1091109_developer-cartoon-programmer.png" className="mt-0 img-fluid rounded-start" alt="update-image"/> */}
+                                        <img src={c_image} className="mt-0 img-fluid rounded-start p-5" alt="update-image"/>
                                     </div>
                                 </div>
-{/*                                 
-                                <input class="text-dark" value={c_name}></input>     
-                                <input class="text-dark" value={c_name}></input>     
-                                <input value={c_description}>           </input> */}
-                                    
                                 <div className="col-md-5" >
                                     <div className="card-body">
                                         <div className="col-md-12">

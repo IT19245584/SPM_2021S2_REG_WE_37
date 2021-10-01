@@ -20,14 +20,14 @@ const LessonSchema = new Schema({
         required: true
     },
     l_video: {
-    type: String,
-    required: true
+        type: String,
+        required: true
     },
     l_description: {
         type: String,
         required: true
     }
-        
+    
 }, {
 timestamps: true
 });

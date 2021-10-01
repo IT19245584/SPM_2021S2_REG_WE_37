@@ -39,13 +39,22 @@ function View_Lesson() {
                                                         <div class="col-sm-4 mt-3">
                                                             <div class="card">
                                                                 <div className="text-center">
-                                                                    <img className="card-img-top " style={{ width: '100%' }} src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/' + LessonDetails.c_image} alt="Card image cap" />
+                                                                    <img className="card-img-top " style={{ 
+                                                                        width: '100%', 
+                                                                        float: "left",
+                                                                        width:  "100%",
+                                                                        height: "500px",
+                                                                        objectFit: "cover" 
+                                                                        }} 
+                                                                        src={'https://res.cloudinary.com/dece6pnob/image/upload/v1633090049/' +  LessonDetails.c_image} alt="Card image cap" />
                                                                 </div>
                                                                 <div className="card-body">
                                                                     <h5 className="card-title text-center text-capitalize">{LessonDetails.name}</h5>
                                                                     <p className="card-text">
-                                                                        <span className="fw-bold">Lesson : </span>{LessonDetails.l_name}<br />
-                                                                        <span className="fw-bold"></span>{LessonDetails.l_image}<br />
+                                                                        <center>
+                                                                        <span className="fw-bold">{LessonDetails.l_name}</span><br />
+                                                                        </center>
+                                                                        {/* <span className="fw-bold"></span>{LessonDetails.l_image}<br /> */}
                                                                         <span className="fw-bold">Lecturer : </span>{LessonDetails.lecturer}<br />
                                                                         <span className="fw-bold">Description : </span>{LessonDetails.l_description}<br /></p>
                                                                 </div>
