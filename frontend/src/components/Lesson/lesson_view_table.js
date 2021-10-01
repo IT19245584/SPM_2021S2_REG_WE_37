@@ -6,6 +6,8 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 // import Course_Dashboard from "..Course/course_dashboard.js";
 import styles from '../Course_css/course.module.css'; 
 import Course_Dashboard from '../Course/course_dashboard.js'; 
+import Pdf from 'react-to-pdf';
+import $ from 'jquery';
 
 function View_Table_Lesson() {
     const[Lesson, setLesson] = useState([]); 
@@ -15,7 +17,13 @@ function View_Table_Lesson() {
     const[lesson_content, setLesson_content] = useState("");
     const[l_video, setL_video] = useState("");
     const[l_description, setL_description] = useState("");
-
+    const ref = React.createRef();
+    const options ={
+        orientation : 'landscape',
+        unit: 'in',
+        format: [9.5, 8]
+    };
+   
     useEffect(() =>{
         axios.get("http://localhost:5000/Lesson/view-all-l")
         .then(res => setLesson(res.data))
@@ -23,6 +31,14 @@ function View_Table_Lesson() {
     });
 
     function remove_lesson(id){
+        $(document).ready(function () {
+            $("#lessonInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#lessonTableBody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
         axios.delete("http://localhost:5000/Lesson/delete/"+id).then(() =>{
         	Swal.fire({  
                 title: "Success!",
@@ -125,10 +141,14 @@ function View_Table_Lesson() {
                     </div>
 
                     <div className={styles.noPrint}>
-                        <a className="mb-3 mr-3 btn btn-sm btn-outline-dark bi bi-arrow-repeat font-weight-bold text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh" href="/view-table-lesson"></a>
+                        <a className="mb-3 mr-3 btn btn-sm btn-outline-warning bi bi-arrow-repeat font-weight-bold text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Refresh" href="/view-table-lesson"></a>
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-primary bi bi-plus-lg font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add" href="/lesson"></a>
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-danger bi bi-printer font-weight-bold text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print" onClick={() => window.print()}></a>
+                        <Pdf targetRef={ref} filename="LessonsAvailable.pdf" options={options} >
+                        {({ toPdf }) =>  <a onClick={toPdf} className="mb-3 mx-3 btn btn-sm btn-outline-danger bi bi-printer font-weight-bold text-danger bi bi-file-earmark-pdf"/>}
+                    </Pdf>
                     </div>
+                    <div ref={ref} >
                     <table className="table table-responsive table-hover bg-light" id="lessonTable">
                         <caption className={styles.noPrint}>List of available lessons</caption>
                         <thead>
@@ -140,7 +160,7 @@ function View_Table_Lesson() {
                                 <th scope="col" className={styles.noPrint}>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="lessonTableBody">
                             {Lesson.map((lesson, key) =>{
                                 return(
                                     <tr>
@@ -169,7 +189,7 @@ function View_Table_Lesson() {
                             })}
                         </tbody>
                         </table>
-
+                    </div>
                 </div>
             </div>
         </div>
