@@ -13,6 +13,13 @@ router.route('/addrefferal').post((req,res) => {
     refferal.save()
         .then(() => res.json('Code Added!'))
         .catch(err => res.status(400).json('Error: '+err));
-    });
+});
+
+router.route("/allRefferal").get(async (req, res) => {
+        refferal_schema.find()
+                .then(refferal => res.json(refferal))
+                .catch(err => res.status(400).json('No Data'))
+});
+
 
 module.exports = router;
