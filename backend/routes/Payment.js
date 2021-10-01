@@ -1,30 +1,34 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const router = require('express').Router();
+let Payment = require('../models/Payment');
 
-const Payment = new Schema({
-    accNo:{
-        type:String,
-        required:true
-    },
-    amount:{
-        type:String,
-        required:true
-    },
-    expiryDate:{
-        type:Date,
-        required:true
-    },
-    cvc:{
-        type:String,
-        required:true
-    },
-    email:{
-        type:String,
-        required:true
-    },
-},{
-    timestamps:true
+router.route('/add').post((req,res) => {
+    const accNo = req.body.accNo;
+    const amount = req.body.amount;
+    const expiryDate = req.body.expiryDate;
+    const cvc = req.body.cvc;
+    const email = req.body.email;
+  
+    const newPayment = new Payment({
+        accNo,
+        amount,
+        expiryDate,
+        cvc,
+        email
+        
+    });
+
+    newPayment.save()
+        .then(() => res.json("Congargulations!! You are successfully done the payment"))
+        .catch(err => res.status(400).json('Error : ' +err));
 });
 
-const Payment__Schema = mongoose.model('Payment__Schema',Payment);
-module.exports = Payment__Schema;
+router.route('/view').get((req,res) => {
+    Payment.find()
+        .then(Payment => res.json(Payment))
+        .catch(err => res.status(400).json('Error: ' +err)); 
+});
+
+
+
+
+module.exports = router;
