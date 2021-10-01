@@ -15,4 +15,11 @@ router.route('/addrefferalpoint').post((req,res) => {
 });
 
 
+router.route("/allRefferalPoints/:id").get(async (req, res) => {
+    const id = req.params.id;
+        refferal_point_schema.find({code : id})
+                .then(refferal_point => res.json(refferal_point))
+                .catch(err => res.status(400).json('No Data'))
+});
+
 module.exports = router;
