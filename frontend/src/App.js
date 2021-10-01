@@ -44,6 +44,22 @@ import AddAssessmentSubmission from './components/Student/AddAssessmentSubmissio
 import ViewAssessmentSubmission from './components/Student/ViewAssessmentSubmission';
 import EditAssessmentSubmission from './components/Student/EditAssessmentSubmission';
 
+import Development from './components/User/Lessons/Development'
+import Music from './components/User/Lessons/Music'
+import Businness from './components/User/Lessons/Businness'
+import Payment from './components/User/Payment/AddPayment'
+import Enrollment from './components/User/ExamRegistration/ViewExamDetails'
+import ExamRegistration from "./components/User/ExamRegistration/AddExamRegistration";
+import UpdateExam from "./components/User/ExamRegistration/UpdateExamDetails";
+import PaymentHistory from "./components/User/Payment/PaymentHistory";
+import StudentProfile from "./components/User/Profile/Profile";
+import AddTec from './components/User/Profile/AddProfile';
+import UpdateTechCommittee from './components/User/Profile/UpdateProfile';
+import LogIn from "./components/User/Login";
+import Passwordreset from "./components/User/Passwordreset";
+import StudentRegistration from "./components/User/Student_Registration";
+import TeacherRegistration from "./components/User/Teacher_registration";
+
 function App() {
   return (
     <Router>
@@ -80,6 +96,22 @@ function App() {
                 <Route path="/lecturer/courses/:id" component={ViewCourseAssessments}/>
                 <Route exact path="/lecturer/assessments/:id" component={ViewAssessment}/>
                 <Route exact path="/lecturer/assessments/:id/edit" component={EditAssessment}/>
+                  
+                <Route path="/development" exact component={Development}/>
+                <Route path="/music" exact component={Music}/>
+                <Route path="/businness" exact component={Businness}/>
+                <Route path="/enrollment" exact component={Enrollment}/>
+                <Route path="/payment" exact component={Payment}/>
+                <Route path="/examregistration" exact component={ExamRegistration}/>
+                <Route path="/paymentHistory" exact component={PaymentHistory}/>
+                <Route path="/studentProfile" exact component={StudentProfile}/>
+                <Route path="/updateExam" exact component={UpdateExam}/>
+                <Route path="/login" exact component={LogIn}/>
+                <Route path="/updatePassword" exact component={Passwordreset}/>
+                <Route path="/studentRegistration" exact component={StudentRegistration}/>
+                <Route path="/teacherRegistration" exact component={TeacherRegistration}/>
+                <Route exact path='/addtec'><AddTec /></Route>
+                <Route exact path='/updatetech'><UpdateTechCommittee /></Route>
 
                 <Route exact path="/user/request" component={LecturerRequest}/>
                 <Route exact path="/admin/notification" component={AdminNotifications}/>
