@@ -54,14 +54,14 @@ function View_Table_Course() {
 
     //search courses
     function search_course_function() {
-    // Declaring variables
+    // Declare relevant variables
     var input, search, table, tr, td, i, txtValue;
     input = document.getElementById("courseInput");
     search = input.value.toUpperCase();
     table = document.getElementById("courseTable");
     tr = table.getElementsByTagName("tr");
 
-    // find matching names by looping
+    // find match data
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
@@ -94,7 +94,7 @@ function View_Table_Course() {
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-primary bi bi-plus-lg font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add" href="/course"></a>
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-danger bi bi-printer font-weight-bold text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print" onClick={() => window.print()}></a>
                     </div>
-                    <table className="table table-responsive table-hover" id="courseTable">
+                    <table className="table table-responsive table-hover bg-light" id="courseTable">
                         <caption className={styles.noPrint}>List of available courses</caption>
                         <thead>
                             <tr className="">
@@ -127,13 +127,13 @@ function View_Table_Course() {
                                                         <i className="bi bi-pencil-square"></i>
                                                     </a>
                                                 </div>
-                                                <div className="col-1">
+                                                {/* <div className="col-1">
                                                     <a onClick={() => view(
                                                         course._id, course.c_name, course.c_image, course.c_description
                                                         )} className="m-1 text-primary">
                                                         <i className="bi bi-person"></i>
                                                     </a>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </td>
                                     </tr>

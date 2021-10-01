@@ -52,14 +52,14 @@ function View_Table_Lesson() {
 
     //search lessons
     function search_lesson_function() {
-    // Declaring variables
+    // Declare relevant variables
     var input, search, table, tr, td, i, txtValue;
     input = document.getElementById("lessonInput");
     search = input.value.toUpperCase();
     table = document.getElementById("lessonTable");
     tr = table.getElementsByTagName("tr");
 
-    // find matching names by looping
+    // find relevant names
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
@@ -75,14 +75,14 @@ function View_Table_Lesson() {
 
     //search  courses by lecturer
     function search_lecturer_function() {
-        // Declaring variables
+        // Declare relevant variables
         var input, search, table, tr, td, i, txtValue;
         input = document.getElementById("lecturerInput");
         search = input.value.toUpperCase();
         table = document.getElementById("lessonTable");
         tr = table.getElementsByTagName("tr");
     
-        // find matching names by looping
+        // find relevant names
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[2];
             if (td) {
@@ -129,7 +129,7 @@ function View_Table_Lesson() {
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-primary bi bi-plus-lg font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add" href="/lesson"></a>
                         <a className="mb-3 mx-3 btn btn-sm btn-outline-danger bi bi-printer font-weight-bold text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print" onClick={() => window.print()}></a>
                     </div>
-                    <table className="table table-responsive table-hover" id="lessonTable">
+                    <table className="table table-responsive table-hover bg-light" id="lessonTable">
                         <caption className={styles.noPrint}>List of available lessons</caption>
                         <thead>
                             <tr className="bg-light">

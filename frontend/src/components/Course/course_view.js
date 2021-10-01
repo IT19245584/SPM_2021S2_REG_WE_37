@@ -4,14 +4,12 @@ import Swal from 'sweetalert2';
 import Cookies from 'js-cookie';
 import {reactLocalStorage} from 'reactjs-localstorage';
 import Course_Dashboard from "./course_dashboard.js";
-
 function View_Course() {
-
     var courseView = reactLocalStorage.getObject('View_Course');
     const [Course, setCourse] = useState([]);
     const id = courseView[0];
     const[c_name, setC_name] = useState(courseView[1]);
-    const[c_image, setC_image] = useState(courseView[2]);
+    const[c_image, setC_image] = useState("https://res.cloudinary.com/dece6pnob/image/upload/v1633066858/"+ courseView[2]);
     const[c_description, setC_description] = useState(courseView[3]);
 
     useEffect(() =>{
@@ -23,7 +21,7 @@ function View_Course() {
         <div className="container-responsive bg-danger">
             <Course_Dashboard/>
             <div className="">
-                <div classNmae="container">
+                <div className="container">
                     <form className="p-3 mt-2">
                         <div className="card mb-1" style={{maxWidth: "fixed"}}>
                             <div className="row g-0">
@@ -31,24 +29,36 @@ function View_Course() {
                                     <div className="card-body bg-light">
                                         <div className="col-md-12">
                                             <h3 className="card-title ml-3 mb-2 text-center">Available Courses</h3>
+                                            <div>
+                                                <span className="bg-dark p-2 rounded"><i class="text-danger bi bi-award-fill"></i><a className="badge badge-danger" href="/lesson-comment">Check User Review</a></span>
+                                            
+                                            </div>
                                                 <div className="row">
                                                     {Course.map((CoursedDetails, key) => (
-                                                        <div class="col-sm-4 mt-3">
+                                                        <div class="col-sm-6 mt-3">
                                                             <div class="card">
                                                                 <div className="text-center">
-                                                                    <img className="card-img-top " style={{ width: '100%' }} src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/' + CoursedDetails.c_image} alt="Card image cap" />
+                                                                    <img className="card-img-top " 
+                                                                        style={{ 
+                                                                            width: '100%', 
+                                                                            float: "left",
+                                                                            width:  "100%",
+                                                                            height: "500px",
+                                                                            objectFit: "cover" 
+                                                                        }}
+                                                                    src={'https://res.cloudinary.com/dece6pnob/image/upload/v1633066858/' + CoursedDetails.c_image} alt="Card image cap" />
                                                                 </div>
                                                                 <div className="card-body">
                                                                     <h5 className="card-title text-center text-capitalize">{CoursedDetails.name}</h5>
                                                                     <p className="card-text">
-                                                                        <span className="fw-bold">Course : </span>{CoursedDetails.c_name}<br />
-                                                                        <span className="fw-bold">Description : </span>{CoursedDetails.c_description}<br />
-                                                                        </p>
+                                                                        <center>
+                                                                        <span className="fw-bold">{CoursedDetails.c_name}</span><br />
+                                                                        </center>
+                                                                        <span className="fw-bold"></span>{CoursedDetails.c_description}<br />
+                                                                    </p>
                                                                 </div>
                                                                 <div className="card-footer bg-white border-0 text-end">
-                                                                    <a className="btn btn-dark text-light">More..</a>
-                                                                    {/* <button type="button" onClick={() => deleteTechnicalCommitteeMember(CoursedDetails._id)} className="btn btn-danger btn-sm">Delete <i class="bi bi-trash"></i></button>{' '}
-                                                                    <button type="button" onClick={() => updateTechnicalCommitteeMember(CoursedDetails._id, CoursedDetails.name, CoursedDetails.image, CoursedDetails.department, CoursedDetails.description, CoursedDetails.status)} class="btn btn-success btn-sm">Update <i class="bi bi-pencil-square"></i></button> */}
+                                                                    <a className="btn btn-dark text-light" href="/view-lesson">More..</a>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -6,7 +6,7 @@ import Registration from './components/registration'
 import Index from './components/index'
 import { BrowserRouter as Router,Route} from 'react-router-dom'
 import './asserts/css/style.css'
-
+import './asserts/css/lesson_comment_form.css'
 //import course
 import Add_Course from './components/Course/course_add';
 import Course_Dashboard from './components/Course/course_dashboard';
@@ -24,9 +24,6 @@ import View_Lesson from './components/Lesson/lesson_view';
 
 //import lesson comment
 import Add_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_add';
-// import Update_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_update';
-// import View_Table_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_view_table';
-// import View_Lesson_Comment from './components/Lesson/Lesson_Comment/lesson_comment_view';
 
 import CourseView from './components/Lecturer/ViewCourses';
 import ViewCourseAssessments from './components/Lecturer/ViewCourseAssesment';

@@ -3,13 +3,6 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import Cookies from 'js-cookie';
 import {reactLocalStorage} from 'reactjs-localstorage';
-import { makeStyles } from '@material-ui/core/styles';
-import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
-
-// https://material-ui.com/components/rating/
-// https://www.w3.org/WAI/tutorials/forms/custom-controls/#a-star-rating
-// import Course_Dashboard from "../../LessonComment/course_dashboard.js";
 
 function Add_Lesson_Comment() {
     //view
@@ -22,7 +15,7 @@ function Add_Lesson_Comment() {
     const[btnStatus, setbtnStatus] = useState(true);
     const[s_rating, setS_rating] = useState();
     // const[value, setValue] = useState(lessonCommentView[4]);
-   
+
     useEffect(() =>{
         axios.get("http://localhost:5000/comment-lesson/view-all")
         .then(res => setLessonComment(res.data))
